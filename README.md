@@ -2,7 +2,7 @@
 
 Research code accompanying *A fractional Wiener chaos solver for stochastic differential equations driven by fractional Brownian motion: closed-form cosine Gram matrices and deterministic coefficient equations*.
 
-**Release v1.0.0 — 28 October 2026.** This public research-software release is not a claim of journal acceptance.
+**Release v1.1.0 — 28 October 2026.** This public research-software release is not a claim of journal acceptance.
 
 Given drift, diffusion, an initial state, H, T, mode count J and chaos degree p, the solver generates and integrates deterministic Galerkin coefficient equations. Means and covariances follow from the coefficients. The user supplies no model-specific solution kernel.
 
@@ -17,7 +17,7 @@ The [method and six-step algorithm](docs/METHOD.md) describe the basis, coeffici
 - Scalar linear Caputo-memory branch.
 - H-independent correlated coefficient equations only for the supported affine class with H-independent model data. Ordinary nonlinear products generally depend on H.
 
-This is not a universal solver for arbitrary stochastic processes. Mode and degree changes are diagnostics, not automatic error certificates for all nonlinear equations. The double-well and large-angle pendulum limitations are retained.
+This is not a universal solver for arbitrary stochastic processes. Mode and degree changes are diagnostics, not automatic error certificates for all nonlinear equations. The double-well limitation is retained. New fixed-mode pendulum experiments substantially improve the displacement variance at higher chaos degree, with remaining mode, mean and higher-dimensional quadrature discrepancies reported explicitly. See [degree-refinement evidence](docs/PENDULUM_REFINEMENT.md).
 
 ## Install and quick start
 
@@ -45,6 +45,7 @@ The core modules are in evidence/solver_snapshot/code/. They retain the numerica
 | Purpose | Command | Scope |
 |---|---|---|
 | Fast verification | python scripts/verify_release.py | Hashes, OU, Hermite algebra, refinement records |
+| Pendulum refinement verification | python scripts/verify_pendulum_refinement.py | Coefficient/moment checks, small solver rerun, quadrature diagnostics and table regeneration |
 | Current figures | python scripts/make_figures_v5.py | Replot stored data to PDF/SVG/PNG, no new MC |
 | Coefficient suite | python scripts/run_campaign.py examples | Original example driver, isolated runs directory |
 | Other campaigns | python scripts/run_campaign.py cubic | Also oscillator, bench, nonlinear |
@@ -61,6 +62,7 @@ Large campaigns can be expensive. The bench driver recomputes solver timings but
 - evidence/solver_snapshot/reference_results: frozen manuscript benchmark records.
 - evidence/data: stored inputs/results for current plots and drivers.
 - evidence/pendulum_refinement: paired grid-refinement code and results.
+- evidence/pendulum_degree_refinement: degree/quadrature campaigns, same-mode MC, full records and safe numeric coefficient arrays.
 - figure_design/legacy_extracts: archived plotted arrays for comparison panels.
 - reference_tables: manuscript table and macro snapshots.
 - scripts: portable entry points and figure generation.
@@ -72,6 +74,6 @@ Manuscript drafts, correspondence, reviewer reports, credentials and unrelated p
 
 ## Citation and reuse
 
-GitHub offers a citation through CITATION.cff. Cite release v1.0.0 for these results; no journal DOI is assigned here.
+GitHub offers a citation through CITATION.cff. Cite release v1.1.0 for these results; no journal DOI is assigned here.
 
 The code is publicly accessible. A software reuse license has not yet been selected by the authors; public visibility alone does not grant an unrestricted software license. Third-party data retain their source terms.

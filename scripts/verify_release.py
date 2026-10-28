@@ -38,5 +38,6 @@ for pair in mc["paired_comparisons"]:
  assert np.allclose(np.array(mc["variances"])[hi]-np.array(mc["variances"])[lo],pair["variance_difference"],atol=1e-15)
  assert (np.array(pair["variance_difference_se"])>=0).all()
 print("PASS coupled refinement result consistency")
+subprocess.run([sys.executable,str(R/"scripts/verify_pendulum_refinement.py")],check=True,cwd=R)
 print("ALL RELEASE CHECKS PASSED")
 

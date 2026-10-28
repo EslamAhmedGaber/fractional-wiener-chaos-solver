@@ -1,0 +1,14 @@
+{
+  "release": "v1.1.0",
+  "date": "2026-10-28",
+  "scope": "Executed degree/quadrature and finite-mode reference experiments",
+  "solver_core_modified": false,
+  "full_fbm_reference_release": "v1.0.0",
+  "completed_coefficient_runs": 31,
+  "numerical_status": "numerical; no new general nonlinear convergence theorem",
+  "known_limitations": [
+    "finite-mode velocity error",
+    "endpoint mean discrepancy",
+    "J5 p6 quadrature sensitivity"
+  ]
+}

@@ -1,0 +1,157 @@
+[
+  {
+    "case": "J3_p10_q31",
+    "coefficients": 286,
+    "passed": true
+  },
+  {
+    "case": "J3_p1_q20",
+    "coefficients": 4,
+    "passed": true
+  },
+  {
+    "case": "J3_p2_q11",
+    "coefficients": 10,
+    "passed": true
+  },
+  {
+    "case": "J3_p3_q11",
+    "coefficients": 20,
+    "passed": true
+  },
+  {
+    "case": "J3_p4_q11",
+    "coefficients": 35,
+    "passed": true
+  },
+  {
+    "case": "J3_p4_q11_lean",
+    "coefficients": 35,
+    "passed": true
+  },
+  {
+    "case": "J3_p4_q21",
+    "coefficients": 35,
+    "passed": true
+  },
+  {
+    "case": "J3_p4_q31",
+    "coefficients": 35,
+    "passed": true
+  },
+  {
+    "case": "J3_p4_q51",
+    "coefficients": 35,
+    "passed": true
+  },
+  {
+    "case": "J3_p4_q65_lean_rtol1e-09",
+    "coefficients": 35,
+    "passed": true
+  },
+  {
+    "case": "J3_p6_q21",
+    "coefficients": 84,
+    "passed": true
+  },
+  {
+    "case": "J3_p6_q31",
+    "coefficients": 84,
+    "passed": true
+  },
+  {
+    "case": "J3_p6_q41",
+    "coefficients": 84,
+    "passed": true
+  },
+  {
+    "case": "J3_p6_q65_lean_rtol1e-09",
+    "coefficients": 84,
+    "passed": true
+  },
+  {
+    "case": "J3_p8_q25",
+    "coefficients": 165,
+    "passed": true
+  },
+  {
+    "case": "J3_p8_q35",
+    "coefficients": 165,
+    "passed": true
+  },
+  {
+    "case": "J3_p8_q45_lean",
+    "coefficients": 165,
+    "passed": true
+  },
+  {
+    "case": "J3_p8_q55_lean_rtol1e-09",
+    "coefficients": 165,
+    "passed": true
+  },
+  {
+    "case": "J3_p8_q65_lean_rtol1e-09",
+    "coefficients": 165,
+    "passed": true
+  },
+  {
+    "case": "J5_p1_q20",
+    "coefficients": 6,
+    "passed": true
+  },
+  {
+    "case": "J5_p2_q11",
+    "coefficients": 21,
+    "passed": true
+  },
+  {
+    "case": "J5_p3_q11",
+    "coefficients": 56,
+    "passed": true
+  },
+  {
+    "case": "J5_p3_q13",
+    "coefficients": 56,
+    "passed": true
+  },
+  {
+    "case": "J5_p3_q9",
+    "coefficients": 56,
+    "passed": true
+  },
+  {
+    "case": "J5_p4_q11",
+    "coefficients": 126,
+    "passed": true
+  },
+  {
+    "case": "J5_p4_q13",
+    "coefficients": 126,
+    "passed": true
+  },
+  {
+    "case": "J5_p5_q11",
+    "coefficients": 252,
+    "passed": true
+  },
+  {
+    "case": "J5_p6_q11",
+    "coefficients": 462,
+    "passed": true
+  },
+  {
+    "case": "J5_p6_q11_lean_rtol1e-09",
+    "coefficients": 462,
+    "passed": true
+  },
+  {
+    "case": "J5_p6_q13_lean_rtol1e-09",
+    "coefficients": 462,
+    "passed": true
+  },
+  {
+    "case": "J5_p6_q15_lean_rtol1e-09",
+    "coefficients": 462,
+    "passed": true
+  }
+]
