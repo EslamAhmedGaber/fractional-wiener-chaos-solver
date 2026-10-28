@@ -49,7 +49,7 @@ table=r"""\begin{tabular}{rrrrrrr}\toprule
 $J$ & $p$ & $q$ & $\Var Q_{J,p}(10)$ & error/full (\%) & error/same $J$ (\%) & time (s)\\\midrule
 """
 for x in rows:
- table+=f"{x['J']} & {x['p']} & {x['q']} & {x['variance']:.6f} & {x['error_full']:+.2f} & {x['error_same_J']:+.2f} & {x['seconds']:.1f}"+r"\\"+"\n"
+ table+=f"{x['J']} & {x['p']} & {x['q']} & {x['variance']:.6f} & ${x['error_full']:+.2f}$ & ${x['error_same_J']:+.2f}$ & {x['seconds']:.1f}"+r"\\"+"\n"
 table+=r"\bottomrule\end{tabular}"+"\n"
 (P/"tab_pendulum_degree.tex").write_text(table,encoding="utf-8",newline="\n")
 print(json.dumps(dict(macros=macros,mean_z=zmean.tolist(),variance_z=zvar.tolist()),indent=2))
@@ -77,7 +77,7 @@ table=r"""\begin{tabular}{rrrrrr}\toprule
 $p$ & $q$ & $\Var Q_{3,p}(10)$ & full (\%) & same $J$ (\%) & time (s)\\\midrule
 """
 for x in rows:
- table+=f"{x['p']} & {x['q']} & {x['variance']:.6f} & {x['error_full']:+.2f} & {x['error_same_J']:+.2f} & {x['seconds']:.1f}"+r"\\"+"\n"
+ table+=f"{x['p']} & {x['q']} & {x['variance']:.6f} & ${x['error_full']:+.2f}$ & ${x['error_same_J']:+.2f}$ & {x['seconds']:.1f}"+r"\\"+"\n"
 table+=r"\bottomrule\end{tabular}"+"\n"
 quad=r"""\begin{tabular}{rrrrrrr}\toprule
 $J$ & $p$ & $q$ & $\E Q(10)$ & $\E V(10)$ & $\Var Q(10)$ & $\Var V(10)$\\\midrule
@@ -85,7 +85,7 @@ $J$ & $p$ & $q$ & $\E Q(10)$ & $\E V(10)$ & $\Var Q(10)$ & $\Var V(10)$\\\midrul
 for key in ["J3_p8_q45_lean","J3_p8_q55_lean_rtol1e-09",best,
             "J5_p6_q11_lean_rtol1e-09","J5_p6_q13_lean_rtol1e-09","J5_p6_q15_lean_rtol1e-09"]:
  x=runs[key]; vals=x["mean"][-1]+x["variance"][-1]
- quad+=f"{x['J']} & {x['p']} & {x['quadrature_order']} & "+" & ".join(f"{y:.6f}" for y in vals)+r"\\"+"\n"
+ quad+=f"{x['J']} & {x['p']} & {x['quadrature_order']} & "+" & ".join((chr(36)+f"{y:.6f}"+chr(36)) for y in vals)+r"\\"+"\n"
 quad+=r"\bottomrule\end{tabular}"+"\n"
 mom=r"""\begin{tabular}{rlrrrrrr}\toprule
 $t$ & state & solver mean & same-$J$ MC & solver var. & same-$J$ MC & s.e. & full MC\\\midrule
@@ -94,7 +94,7 @@ for k,t in enumerate(full["times"]):
  for dim,state in enumerate(["Q","V"]):
   vals=[r["mean"][k][dim],fref["mean"][k][dim],r["variance"][k][dim],
         fref["variance"][k][dim],fref["se_variance"][k][dim],full["variances"][-1][k][dim]]
-  mom+=f"{t:g} & "+state+" & "+" & ".join(f"{y:.6f}" for y in vals)+r"\\"+"\n"
+  mom+=f"{t:g} & "+state+" & "+" & ".join((chr(36)+f"{y:.6f}"+chr(36)) for y in vals)+r"\\"+"\n"
 mom+=r"\bottomrule\end{tabular}"+"\n"
 files={"degree_macros.tex":text,"tab_pendulum_degree.tex":table,
        "tab_pendulum_quadrature.tex":quad,"tab_pendulum_all_moments.tex":mom}

@@ -4,3 +4,4 @@ __pycache__/
 runs/
 figures/
 evidence/solver_snapshot/results/
+*.log

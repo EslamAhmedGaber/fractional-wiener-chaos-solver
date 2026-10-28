@@ -180,6 +180,21 @@
   "detail": ""
  },
  {
+  "check": "F8d fixed J=3 measured degrees",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F8d degree-eight displacement improvement",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F8d nonmonotonic first two degrees retained",
+  "ok": true,
+  "detail": ""
+ },
+ {
   "check": "OU final MC RMS uses M=65536, not preceding run",
   "ok": true,
   "detail": ""
@@ -361,6 +376,21 @@
  },
  {
   "check": "F8c pendulum t=10 deviations -2.4/-18.5/-71.4 %",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F8d fixed J=3 measured degrees",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F8d degree-eight displacement improvement",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F8d nonmonotonic first two degrees retained",
   "ok": true,
   "detail": ""
  },

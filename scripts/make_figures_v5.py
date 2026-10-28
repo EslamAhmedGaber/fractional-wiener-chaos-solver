@@ -224,11 +224,11 @@ def fig_limit(lay):
     ax[1].loglog(h[m], ou[m], color='0.15', marker='o', ms=2.8, label=r'OU, Var $X(2)$')
     ax[1].loglog(h[m], po[m], color='#d95f02', marker='s', ms=2.8, label='population, peak Var')
     ax[1].loglog(h[m], h[m], color='0.55', ls=':', lw=0.9, label='slope 1')
-    ax[1].set_xlabel(r'$H-\frac{1}{2}$'); ax[1].set_ylabel(r'$|m_H-m_{1/2}|$'); logticks(ax[1]); logticks(ax[1], 'x'); ax[1].legend(loc='upper left')
+    ax[1].set_xlabel(r'$H-\frac{1}{2}$'); ax[1].set_ylabel(r'$|m_H-m_{1/2}|$'); logticks(ax[1]); logticks(ax[1], 'x'); ax[1].legend(['OU variance', 'population peak', 'slope 1'], loc='upper left')
     for i, (Jv, c) in enumerate(zip([9, 33, 129], ['#9ecae1', '#4292c6', '#08306b'])):
         xs, ys = series(df, 2, i); ax[2].semilogx(xs, ys, color=c, marker='o', ms=2.6, label=f'$J={Jv}$')
         if i == 2: check('F4c J=129 approaches 11.2', abs(ys.max() - 11.2) < 0.06, ys.max())
-    ax[2].set_xlabel(r'$H-\frac{1}{2}$'); ax[2].set_ylabel(r'$\|G^H-I\|_2/(H-\frac{1}{2})$'); logticks(ax[2], 'x'); ax[2].set_ylim(0, 12.5); ax[2].legend(loc='lower left')
+    ax[2].set_xlabel(r'$H-\frac{1}{2}$'); ax[2].set_ylabel(r'$\|G^H-I\|_2/(H-1/2)$'); logticks(ax[2], 'x'); ax[2].set_ylim(0, 12.5); ax[2].legend(loc='lower left')
     for a, s in zip(ax, 'abc'): letter(a, s)
     save(fig, 'v5_fig04_limit', lay, dict(panels={'a': 'v12_examples.json pop_lim_curves, pop_mc_H05 (every 8th point)', 'b': 'v12_examples.json limit', 'c': 'V4 plotted data fig4_classical_limit axis 2'}, from_v4='5a,5b,5c'))
 
@@ -276,7 +276,7 @@ def fig_cubic(lay):
     ax[1].plot(t, 1e3 * np.array(CU['sw']['0.5_0.75_65_2']['m3']), color='#0072B2', **DEG_STY[2], label='$p=2$, $J=65$')
     ax[1].axhline(0, color='0.45', **DEG_STY[1], label='$p=1$ (zero)')
     ax[1].plot(x4m, y4m, 'D', color='#762a83', ms=3.4, label='$p=4$, $J=9$'); ax[1].plot(xm, ym, 'o', ms=2.4, color=MC_COL, mfc='none', mew=0.8, label='MC')
-    ax[1].set_ylim(-10, 1.0); ax[1].set_xlabel('$t$'); ax[1].set_ylabel(r'$\mathbb{E}[(X-\mathbb{E}X)^3]\times10^{3}$'); ax[1].legend(loc='lower right', ncol=2, columnspacing=0.7)
+    ax[1].set_ylim(-10, 1.0); ax[1].set_xlabel('$t$'); ax[1].set_ylabel(r'$\mathrm{E}[(X-\mathrm{E}X)^3]\times10^{3}$'); ax[1].legend(loc='lower right', ncol=2, columnspacing=0.7)
     # (c) degree refinement at t = 4 (V4 data; the J=65, p=2 square of H=0.75 corrected, see FIGURE_AUDIT_REPORT 0.1)
     dd = csv('fig8_degree_doublewell')
     cu = CU['sw']['0.5_0.75_65_2']; tt = np.array(cu['t']); v4 = np.array(cu['var'])[np.argmin(abs(tt - 4.0))]
@@ -321,7 +321,7 @@ def fig_barrier():
 def fig_osc(lay):
     fig, ax = layout('wide', lay, 3, h_one=2.50)
     sw = pd.DataFrame(OS['sweep'])
-    for col, lab, c, ls in [('varQ', r'Var $Q$', '#0072B2', '-'), ('varV', r'Var $V$', '#D55E00', '-'), ('EE', r'$\mathbb{E}E$', '#2166ac', '--')]:
+    for col, lab, c, ls in [('varQ', r'Var $Q$', '#0072B2', '-'), ('varV', r'Var $V$', '#D55E00', '-'), ('EE', r'$\mathrm{E}[E]$', '#2166ac', '--')]:
         ax[0].plot(sw.H, sw[col], color=c, ls=ls, lw=1.3, label=lab)
     for H in ['0.5', '0.7', '0.9']:
         R = OS['ref'][f'{H}_20.0']; ax[0].plot([float(H)] * 2, [R[0][0], R[1][1]], 'o', mfc='white', mec='0.2', ms=3.4, mew=0.8, ls='none')
@@ -345,7 +345,9 @@ def fig_osc(lay):
 
 # ======================================================================= Fig 8: Duffing and pendulum histories (new computation)
 def fig_nonlin_osc(lay):
-    fig, ax = layout('wide', lay, 3, h_one=2.50)
+    fig, axs = plt.subplots(2, 2, figsize=(W_ONE if lay == 'one' else W_TWO, 4.5), constrained_layout=True)
+    ax = axs.ravel()
+    fig.get_layout_engine().set(w_pad=0.03, h_pad=0.03, wspace=0.06, hspace=0.06)
     t = np.array(OT['t']); m = t >= 1.0
     chk = OT['reproduction_max_rel_diff_at_stored_times']; check('F8 MC rerun reproduces stored values', max(chk.values()) < 1e-12, max(chk.values()))
     H = '0.9'; mc = np.array(OT['duff'][f'mc_{H}_1000']['var'])[:, 0]; se = np.array(OT['duff'][f'mc_{H}_1000']['se_var'])[:, 0]
@@ -367,8 +369,22 @@ def fig_nonlin_osc(lay):
         ax[2].plot(t[m], 100 * (v[m] / mcp[m] - 1), color=HC(H), lw=1.3, label=f'$H={H}$')
     check('F8c pendulum t=10 deviations -2.4/-18.5/-71.4 %', all(abs(100 * (np.array(OT['pend'][f'{H}_65_1']['var'])[-1, 0] / np.array(OT['pend'][f'mc_{H}_1000']['var'])[-1, 0] - 1) - d) < 0.06 for H, d in [('0.6', -2.4), ('0.75', -18.5), ('0.9', -71.4)]))
     ax[2].axhline(0, color='0.6', lw=0.6); ax[2].set_xlabel('$t$'); ax[2].set_ylabel(r'pendulum: deviation of Var $Q$ (%)'); ax[2].legend(loc='lower left'); ax[2].set_xlim(0, 10)
-    for a, s in zip(ax, 'abc'): letter(a, s)
-    save(fig, 'v5_fig08_duffing_pendulum', lay, dict(panels={'a,b,c': 'evidence/oscillator_time/osc_time.json (new run of the original MC and solver settings; values at t=1,2,5,10 identical to v12_new.json)'}, from_v4='new'))
+    degree = J_(V, 'evidence', 'pendulum_degree_refinement', 'final_diagnostics.json')['selected']
+    ps = np.array([r['p'] for r in degree])
+    ef = np.array([r['error_full'] for r in degree]); ej = np.array([r['error_same_J'] for r in degree])
+    check('F8d fixed J=3 measured degrees', all(r['J'] == 3 for r in degree) and ps.tolist() == [1,2,4,6,8])
+    check('F8d degree-eight displacement improvement', abs(ef[-1]+14.060528912354197)<1e-10)
+    check('F8d nonmonotonic first two degrees retained', ef[1] < ef[0])
+    ax[3].axhline(0, color='0.65', lw=0.7)
+    ax[3].plot(ps, ef, 'o-', color='#0072B2', ms=3.5, label='full fBm reference')
+    ax[3].plot(ps, ej, 's--', color='#D55E00', ms=3.2, label='same-mode reference')
+    ax[3].set(xticks=ps, xlabel='chaos degree $p$', ylabel='pendulum: variance deviation (%)', ylim=(-82,12))
+    ax[3].legend(loc='lower right')
+    ax[3].text(0.04,0.96,r'$H=0.9$, $J=3$, $t=10$',transform=ax[3].transAxes,ha='left',va='top',fontsize=SMALL)
+    for a, s in zip(ax, 'abcd'): letter(a, s, dx=0.0, dy=1.03)
+    save(fig, 'v5_fig08_duffing_pendulum', lay, dict(panels={'a,b,c': 'evidence/oscillator_time/osc_time.json; historical arrays unchanged',
+         'd':'evidence/pendulum_degree_refinement/final_diagnostics.json selected fixed-J rows; straight lines guide the eye'},
+         from_v4='histories preserved; degree panel added'))
 
 def fig_cost(lay):
     W = W_ONE if lay == 'one' else W_COL

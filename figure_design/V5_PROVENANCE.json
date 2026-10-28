@@ -324,14 +324,15 @@
  },
  "v5_fig08_duffing_pendulum": {
   "panels": {
-   "a,b,c": "evidence/oscillator_time/osc_time.json (new run of the original MC and solver settings; values at t=1,2,5,10 identical to v12_new.json)"
+   "a,b,c": "evidence/oscillator_time/osc_time.json; historical arrays unchanged",
+   "d": "evidence/pendulum_degree_refinement/final_diagnostics.json selected fixed-J rows; straight lines guide the eye"
   },
-  "from_v4": "new",
+  "from_v4": "histories preserved; degree panel added",
   "layouts": {
    "one": {
     "size_in": [
      6.476,
-     2.5
+     4.5
     ],
     "text_overlaps": [
      [
@@ -344,12 +345,24 @@
    "two": {
     "size_in": [
      7.223,
-     2.5
+     4.5
     ],
     "text_overlaps": [
      [
       "a",
       "0.150"
+     ],
+     [
+      "b",
+      "deviation of Var $Q$ from MC (%)"
+     ],
+     [
+      "c",
+      "pendulum: deviation of Var $Q$ (%)"
+     ],
+     [
+      "d",
+      "pendulum: variance deviation (%)"
      ]
     ],
     "text_outside": []

@@ -2,7 +2,7 @@
 
 Research code accompanying *A fractional Wiener chaos solver for stochastic differential equations driven by fractional Brownian motion: closed-form cosine Gram matrices and deterministic coefficient equations*.
 
-**Release v1.1.0 — 28 October 2026.** This public research-software release is not a claim of journal acceptance.
+**Release v1.1.1 — 28 October 2026.** This public research-software release is not a claim of journal acceptance.
 
 Given drift, diffusion, an initial state, H, T, mode count J and chaos degree p, the solver generates and integrates deterministic Galerkin coefficient equations. Means and covariances follow from the coefficients. The user supplies no model-specific solution kernel.
 
@@ -74,6 +74,8 @@ Manuscript drafts, correspondence, reviewer reports, credentials and unrelated p
 
 ## Citation and reuse
 
-GitHub offers a citation through CITATION.cff. Cite release v1.1.0 for these results; no journal DOI is assigned here.
+GitHub offers a citation through CITATION.cff. Cite release v1.1.1 for these results; no journal DOI is assigned here.
 
 The code is publicly accessible. A software reuse license has not yet been selected by the authors; public visibility alone does not grant an unrestricted software license. Third-party data retain their source terms.
+
+Release v1.1.1 adds the main-figure pendulum degree panel and portable expectation glyphs, fixes legend spacing, and typesets signed table values in math mode. All numerical results and core solver modules are unchanged.
