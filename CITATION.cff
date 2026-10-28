@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "Please cite this versioned research software when using the solver or its numerical results."
+type: software
+title: "Fractional Wiener Chaos Solver"
+version: "1.0.0"
+date-released: "2026-10-28"
+authors:
+  - family-names: Ahmed
+    given-names: Eslam
+  - family-names: El-Beltagy
+    given-names: Mohamed A.
+  - family-names: Etman
+    given-names: Ahmed
+  - family-names: Elnady
+    given-names: Sroor M.
+repository-code: "https://github.com/EslamAhmedGaber/fractional-wiener-chaos-solver"
+url: "https://github.com/EslamAhmedGaber/fractional-wiener-chaos-solver"
+abstract: "Deterministic coefficient equations, fractional cosine Gram matrices, benchmark data and reproducible numerical experiments for standard fractional Brownian motion."

@@ -1,0 +1,16 @@
+\begin{tabular}{llrr}\toprule
+problem & method & time (ms) & rel.\ error\\\midrule
+OU, $H=0.75$, $t=0.5$ & solver, $J=9$ & 26.4 & $6.6\times10^{-3}$ \\
+ & solver, $J=33$ & 84.8 & $8.8\times10^{-4}$ \\
+ & solver, $J=129$ & 462.3 & $1.1\times10^{-4}$ \\
+ & exact-grid MC, $M=2^{10}$, 1024 steps & 175 & $4.0\times10^{-2}$ \\
+ & exact-grid MC, $M=2^{12}$, 1024 steps & 590 & $1.6\times10^{-2}$ \\
+ & exact-grid MC, $M=2^{14}$, 1024 steps & 2349 & $6.7\times10^{-3}$ \\
+ & exact-grid MC, $M=2^{16}$, 1024 steps & 11796 & $8.4\times10^{-3}$ \\
+\addlinespace
+population, $H=\frac12$, $t=11.25$ & solver $p=1$, $J=65$ & 239 & $2.1\times10^{-2}$ \\
+ & solver $p=1$, $J=129$ & 713 & $9.4\times10^{-3}$ \\
+ & solver $p=1$, $J=257$ & 1629 & $3.8\times10^{-3}$ \\
+ & solver, extrapolated from $J=129,257$ & 2341 & $1.9\times10^{-3}$ \\
+ & It\^o MC, $2\times10^5$ paths, $\Delta t=0.005$ & 29860 & s.e.\ $3.2\times10^{-3}$ \\
+\bottomrule\end{tabular}

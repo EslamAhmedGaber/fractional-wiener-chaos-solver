@@ -1,0 +1,488 @@
+{
+ "v5_fig01_gram": {
+  "panels": {
+   "a": "theory_noise.json diag[H].d/asym (T=1)",
+   "b": "hfc.gram(0.8,1,cos,10)",
+   "c": "hfc.gram(0.8,1,cos,17), Cholesky"
+  },
+  "from_v4": "1a,1b,4a",
+  "layouts": {
+   "one": {
+    "size_in": [
+     6.476,
+     2.75
+    ],
+    "text_overlaps": [
+     [
+      "$\\mathdefault{10^{-1}}$",
+      "$\\mathdefault{10^{-4}}$"
+     ],
+     [
+      "c",
+      "0.15"
+     ]
+    ],
+    "text_outside": [
+     "$\\mathdefault{10^{1}}$"
+    ]
+   },
+   "two": {
+    "size_in": [
+     7.223,
+     2.75
+    ],
+    "text_overlaps": [
+     [
+      "$\\mathdefault{10^{4}}$",
+      "0"
+     ],
+     [
+      "c",
+      "0.15"
+     ]
+    ],
+    "text_outside": [
+     "$\\mathdefault{10^{1}}$"
+    ]
+   }
+  }
+ },
+ "v5_fig02_noise": {
+  "panels": {
+   "a": "theory_noise.json noise[0.8]; weighted bound from V4 plotted data",
+   "b": "theory_noise.json noise[H].cos.classical",
+   "c": "theory_noise.json noise[H].profile17"
+  },
+  "from_v4": "2a,2b,3a",
+  "layouts": {
+   "one": {
+    "size_in": [
+     6.476,
+     2.5
+    ],
+    "text_overlaps": [
+     [
+      "a",
+      "$\\mathdefault{10^{0}}$"
+     ],
+     [
+      "b",
+      "$\\mathdefault{10^{0}}$"
+     ],
+     [
+      "257",
+      "\u22120.5"
+     ]
+    ],
+    "text_outside": [
+     "$\\mathdefault{10^{0}}$"
+    ]
+   },
+   "two": {
+    "size_in": [
+     7.223,
+     2.5
+    ],
+    "text_overlaps": [
+     [
+      "257",
+      "\u22120.5"
+     ]
+    ],
+    "text_outside": [
+     "$\\mathdefault{10^{0}}$"
+    ]
+   }
+  }
+ },
+ "v5_fig03_worked": {
+  "panels": {
+   "a": "v12_examples.json ou_interior (OU, t=1, T=2)",
+   "b": "v12_examples.json wick[H][33] (t=1)"
+  },
+  "from_v4": "6a,6b",
+  "layouts": {
+   "one": {
+    "size_in": [
+     6.476,
+     2.4
+    ],
+    "text_overlaps": [],
+    "text_outside": [
+     "$\\mathdefault{10^{-7}}$",
+     "$\\mathdefault{10^{0}}$"
+    ]
+   },
+   "two": {
+    "size_in": [
+     7.223,
+     2.4
+    ],
+    "text_overlaps": [],
+    "text_outside": [
+     "$\\mathdefault{10^{-7}}$",
+     "$\\mathdefault{10^{0}}$"
+    ]
+   }
+  }
+ },
+ "v5_fig04_limit": {
+  "panels": {
+   "a": "v12_examples.json pop_lim_curves, pop_mc_H05 (every 8th point)",
+   "b": "v12_examples.json limit",
+   "c": "V4 plotted data fig4_classical_limit axis 2"
+  },
+  "from_v4": "5a,5b,5c",
+  "layouts": {
+   "one": {
+    "size_in": [
+     6.476,
+     2.5
+    ],
+    "text_overlaps": [
+     [
+      "a",
+      "2.0"
+     ],
+     [
+      "30",
+      "$\\mathdefault{10^{-6}}$"
+     ],
+     [
+      "40",
+      "$\\mathdefault{10^{-5}}$"
+     ],
+     [
+      "40",
+      "$\\mathdefault{10^{-5}}$"
+     ],
+     [
+      "b",
+      "$\\mathdefault{10^{1}}$"
+     ],
+     [
+      "$\\mathdefault{10^{-5}}$",
+      "$\\mathdefault{10^{-5}}$"
+     ],
+     [
+      "$\\mathdefault{10^{-1}}$",
+      "$\\mathdefault{10^{-6}}$"
+     ],
+     [
+      "$\\mathdefault{10^{0}}$",
+      "$\\mathdefault{10^{-5}}$"
+     ],
+     [
+      "$\\mathdefault{10^{1}}$",
+      "$\\mathdefault{10^{-4}}$"
+     ]
+    ],
+    "text_outside": []
+   },
+   "two": {
+    "size_in": [
+     7.223,
+     2.5
+    ],
+    "text_overlaps": [
+     [
+      "30",
+      "$\\mathdefault{10^{-6}}$"
+     ],
+     [
+      "40",
+      "$\\mathdefault{10^{-5}}$"
+     ],
+     [
+      "$\\mathdefault{10^{-5}}$",
+      "$\\mathdefault{10^{-5}}$"
+     ],
+     [
+      "$\\mathdefault{10^{-1}}$",
+      "$\\mathdefault{10^{-6}}$"
+     ],
+     [
+      "$\\mathdefault{10^{0}}$",
+      "$\\mathdefault{10^{-5}}$"
+     ],
+     [
+      "$\\mathdefault{10^{1}}$",
+      "$\\mathdefault{10^{-4}}$"
+     ]
+    ],
+    "text_outside": [
+     "\u221210"
+    ]
+   }
+  }
+ },
+ "v5_fig05_memory_population": {
+  "panels": {
+   "a": "v12_examples.json memory[H][65].var1 and fwhe57",
+   "b": "v12_examples.json pop[H].p1/p2, pop_lim_curves[0.5], pop_mc_H05"
+  },
+  "from_v4": "7a,8a",
+  "layouts": {
+   "one": {
+    "size_in": [
+     6.476,
+     2.4
+    ],
+    "text_overlaps": [
+     [
+      "25",
+      "\u22125"
+     ]
+    ],
+    "text_outside": []
+   },
+   "two": {
+    "size_in": [
+     7.223,
+     2.4
+    ],
+    "text_overlaps": [
+     [
+      "25",
+      "\u22125"
+     ]
+    ],
+    "text_outside": []
+   }
+  }
+ },
+ "v5_fig06_cubic": {
+  "panels": {
+   "a,b": "v12_cubic.json general solver and v10_runs.json dense MC (legacy extraction verified)",
+   "c": "legacy fig8_degree_doublewell, corrected H=.75 p=2 J=65 point from v12_cubic at t=4",
+   "d": "legacy fig8_degree_doublewell axis 3"
+  },
+  "from_v4": "9a,9b,10a,10b",
+  "layouts": {
+   "one": {
+    "size_in": [
+     6.476,
+     4.65
+    ],
+    "text_overlaps": [],
+    "text_outside": []
+   },
+   "two": {
+    "size_in": [
+     7.223,
+     4.65
+    ],
+    "text_overlaps": [],
+    "text_outside": [
+     "\u22121"
+    ]
+   }
+  }
+ },
+ "v5_fig07_oscillator": {
+  "panels": {
+   "a,b": "v12_oscillator.json sweep (J=257), ref (quadrature)",
+   "c": "v12_oscillator.json curves (J=513), ref"
+  },
+  "from_v4": "12a,12b,13a",
+  "layouts": {
+   "one": {
+    "size_in": [
+     6.476,
+     2.5
+    ],
+    "text_overlaps": [
+     [
+      "a",
+      "0.200"
+     ],
+     [
+      "1.0",
+      "\u221210"
+     ]
+    ],
+    "text_outside": []
+   },
+   "two": {
+    "size_in": [
+     7.223,
+     2.5
+    ],
+    "text_overlaps": [
+     [
+      "a",
+      "0.200"
+     ],
+     [
+      "1.0",
+      "0.4"
+     ]
+    ],
+    "text_outside": []
+   }
+  }
+ },
+ "v5_fig08_duffing_pendulum": {
+  "panels": {
+   "a,b,c": "evidence/oscillator_time/osc_time.json (new run of the original MC and solver settings; values at t=1,2,5,10 identical to v12_new.json)"
+  },
+  "from_v4": "new",
+  "layouts": {
+   "one": {
+    "size_in": [
+     6.476,
+     2.5
+    ],
+    "text_overlaps": [
+     [
+      "a",
+      "0.150"
+     ]
+    ],
+    "text_outside": []
+   },
+   "two": {
+    "size_in": [
+     7.223,
+     2.5
+    ],
+    "text_overlaps": [
+     [
+      "a",
+      "0.150"
+     ]
+    ],
+    "text_outside": []
+   }
+  }
+ },
+ "v5_fig09_cost": {
+  "panels": {
+   "-": "v12_bench.json ou; six solver settings, four MC settings, six MC repetitions"
+  },
+  "from_v4": "Table 11, expanded plotted settings",
+  "note": "No bias-floor line: empirical bias does not certify time-discretisation bias. Population SE and OU RMS are not mixed.",
+  "layouts": {
+   "one": {
+    "size_in": [
+     6.476,
+     2.6
+    ],
+    "text_overlaps": [],
+    "text_outside": []
+   },
+   "two": {
+    "size_in": [
+     3.487,
+     2.6
+    ],
+    "text_overlaps": [],
+    "text_outside": []
+   }
+  }
+ },
+ "v5_figS2_noise_path": {
+  "panels": {
+   "-": "V4 plotted data fig2_noise_paths axis 3"
+  },
+  "from_v4": "3b",
+  "layouts": {
+   "supplement": {
+    "size_in": [
+     3.562,
+     2.3
+    ],
+    "text_overlaps": [
+     [
+      "\u22120.2",
+      "\u22120.5"
+     ]
+    ],
+    "text_outside": []
+   }
+  }
+ },
+ "v5_figS3_gram_limit_entrywise": {
+  "panels": {
+   "-": "theory_noise.json limit[J] (columns: H-1/2, max|G-I|, max corr)"
+  },
+  "from_v4": "4b",
+  "layouts": {
+   "supplement": {
+    "size_in": [
+     3.562,
+     2.3
+    ],
+    "text_overlaps": [],
+    "text_outside": []
+   }
+  }
+ },
+ "v5_figS4_rates_individual": {
+  "panels": {
+   "a": "V4 plotted data fig3_memory axis 3",
+   "b": "V4 plotted data fig3_population axis 5 (reference: extrapolated value)",
+   "c": "v12_oscillator.json conv"
+  },
+  "from_v4": "7b, 8b, 13b",
+  "layouts": {
+   "supplement": {
+    "size_in": [
+     6.476,
+     2.1
+    ],
+    "text_overlaps": [
+     [
+      "a",
+      "$\\mathdefault{10^{-2}}$"
+     ],
+     [
+      "b",
+      "$\\mathdefault{10^{-1}}$"
+     ],
+     [
+      "c",
+      "$\\mathdefault{10^{0}}$"
+     ]
+    ],
+    "text_outside": [
+     "$\\mathdefault{10^{0}}$",
+     "$\\mathdefault{10^{0}}$"
+    ]
+   }
+  }
+ },
+ "v5_figS5_barrier": {
+  "panels": {
+   "a,b": "legacy fig8_barrier axes 4,5"
+  },
+  "from_v4": "11a,11b",
+  "layouts": {
+   "supplement": {
+    "size_in": [
+     6.476,
+     2.45
+    ],
+    "text_overlaps": [],
+    "text_outside": []
+   }
+  }
+ },
+ "v5_figS1_temperature": {
+  "panels": {
+   "a,b": "new_apps_v7.json and nhemitemp_annual.csv"
+  },
+  "from_v4": "Supplement S1(a,b)",
+  "note": "Old cost panel removed; OU cost is main Figure 9; complete costs retained in Table 11.",
+  "layouts": {
+   "supplement": {
+    "size_in": [
+     6.476,
+     3.9
+    ],
+    "text_overlaps": [],
+    "text_outside": []
+   }
+  }
+ }
+}

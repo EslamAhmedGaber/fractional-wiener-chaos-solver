@@ -1,0 +1,377 @@
+[
+ {
+  "check": "F1a diag H=0.55 equals V4 plotted",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F1a diag H=0.7 equals V4 plotted",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F1a ratio at k=512, H=0.7",
+  "ok": true,
+  "detail": "0.9997289858572865"
+ },
+ {
+  "check": "F1a diag H=0.8 equals V4 plotted",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F1a ratio at k=512, H=0.8",
+  "ok": true,
+  "detail": "0.9996577203446191"
+ },
+ {
+  "check": "F1a diag H=0.95 equals V4 plotted",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F1a ratio at k=512, H=0.95",
+  "ok": true,
+  "detail": "0.9996074762172534"
+ },
+ {
+  "check": "F1b largest correlation 0.104 at (0,2)",
+  "ok": true,
+  "detail": "0.10385550303579562"
+ },
+ {
+  "check": "F1c correction k=2 equals V4 plotted",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F1c correction k=4 equals V4 plotted",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F1c correction k=8 equals V4 plotted",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F2a cosine equals V4 plotted",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F2c profile endpoints vanish",
+  "ok": true,
+  "detail": "0.0"
+ },
+ {
+  "check": "F3a OU H=0.5 equals V4 plotted",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F3a OU H=0.55 equals V4 plotted",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F3a OU H=0.75 equals V4 plotted",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F3a OU H=0.95 equals V4 plotted",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F3b Wick H=0.5 equals V4 plotted",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F3b Wick H=0.75 equals V4 plotted",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F3b Wick H=0.95 equals V4 plotted",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F4b OU equals V4 plotted",
+  "ok": true,
+  "detail": "(array([2.75542089e-05, 2.75960543e-04, 1.38909494e-03]), array([2.75542089e-05, 2.75960543e-04, 1.38909494e-03]))"
+ },
+ {
+  "check": "F4c J=129 approaches 11.2",
+  "ok": true,
+  "detail": "11.23836052698714"
+ },
+ {
+  "check": "F5a memory H=0.5 deviation at t=20 < 2e-4",
+  "ok": true,
+  "detail": "-0.00011626673669684617"
+ },
+ {
+  "check": "F5a memory H=0.7 deviation at t=20 < 2e-4",
+  "ok": true,
+  "detail": "7.280106095763905e-05"
+ },
+ {
+  "check": "F5a memory H=0.95 deviation at t=20 < 2e-4",
+  "ok": true,
+  "detail": "4.41320925648192e-06"
+ },
+ {
+  "check": "F5b peak H=0.95 near 8.5",
+  "ok": true,
+  "detail": "8.49561438924678"
+ },
+ {
+  "check": "F6a dense MC matches v10_runs, a separate stream from Table 8",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F6a p1 and p2 match general solver, not legacy precursor",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F6c corrected H=0.75 J=65 p=2 deviation = -4.6 % (Table 8)",
+  "ok": true,
+  "detail": "-4.602267383563752"
+ },
+ {
+  "check": "F6c V4 plotted value was the t=0.4 entry",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F6d MC all paths at t=4 = 0.0263",
+  "ok": true,
+  "detail": "0.0263198685220031"
+ },
+ {
+  "check": "F7a Var V(20) 0.1333 -> 0.0323",
+  "ok": true,
+  "detail": "(np.float64(0.1333324326456589), np.float64(0.03225103736847389))"
+ },
+ {
+  "check": "F7b ratio 1.00 -> 5.30",
+  "ok": true,
+  "detail": "5.300271482374428"
+ },
+ {
+  "check": "F8 MC rerun reproduces stored values",
+  "ok": true,
+  "detail": "0.0"
+ },
+ {
+  "check": "F8b Duffing t=10 p=2 deviation -5.8 % (Table 10)",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F8c pendulum t=10 deviations -2.4/-18.5/-71.4 %",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "OU final MC RMS uses M=65536, not preceding run",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F1a diag H=0.55 equals V4 plotted",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F1a diag H=0.7 equals V4 plotted",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F1a ratio at k=512, H=0.7",
+  "ok": true,
+  "detail": "0.9997289858572865"
+ },
+ {
+  "check": "F1a diag H=0.8 equals V4 plotted",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F1a ratio at k=512, H=0.8",
+  "ok": true,
+  "detail": "0.9996577203446191"
+ },
+ {
+  "check": "F1a diag H=0.95 equals V4 plotted",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F1a ratio at k=512, H=0.95",
+  "ok": true,
+  "detail": "0.9996074762172534"
+ },
+ {
+  "check": "F1b largest correlation 0.104 at (0,2)",
+  "ok": true,
+  "detail": "0.10385550303579562"
+ },
+ {
+  "check": "F1c correction k=2 equals V4 plotted",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F1c correction k=4 equals V4 plotted",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F1c correction k=8 equals V4 plotted",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F2a cosine equals V4 plotted",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F2c profile endpoints vanish",
+  "ok": true,
+  "detail": "0.0"
+ },
+ {
+  "check": "F3a OU H=0.5 equals V4 plotted",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F3a OU H=0.55 equals V4 plotted",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F3a OU H=0.75 equals V4 plotted",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F3a OU H=0.95 equals V4 plotted",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F3b Wick H=0.5 equals V4 plotted",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F3b Wick H=0.75 equals V4 plotted",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F3b Wick H=0.95 equals V4 plotted",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F4b OU equals V4 plotted",
+  "ok": true,
+  "detail": "(array([2.75542089e-05, 2.75960543e-04, 1.38909494e-03]), array([2.75542089e-05, 2.75960543e-04, 1.38909494e-03]))"
+ },
+ {
+  "check": "F4c J=129 approaches 11.2",
+  "ok": true,
+  "detail": "11.23836052698714"
+ },
+ {
+  "check": "F5a memory H=0.5 deviation at t=20 < 2e-4",
+  "ok": true,
+  "detail": "-0.00011626673669684617"
+ },
+ {
+  "check": "F5a memory H=0.7 deviation at t=20 < 2e-4",
+  "ok": true,
+  "detail": "7.280106095763905e-05"
+ },
+ {
+  "check": "F5a memory H=0.95 deviation at t=20 < 2e-4",
+  "ok": true,
+  "detail": "4.41320925648192e-06"
+ },
+ {
+  "check": "F5b peak H=0.95 near 8.5",
+  "ok": true,
+  "detail": "8.49561438924678"
+ },
+ {
+  "check": "F6a dense MC matches v10_runs, a separate stream from Table 8",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F6a p1 and p2 match general solver, not legacy precursor",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F6c corrected H=0.75 J=65 p=2 deviation = -4.6 % (Table 8)",
+  "ok": true,
+  "detail": "-4.602267383563752"
+ },
+ {
+  "check": "F6c V4 plotted value was the t=0.4 entry",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F6d MC all paths at t=4 = 0.0263",
+  "ok": true,
+  "detail": "0.0263198685220031"
+ },
+ {
+  "check": "F7a Var V(20) 0.1333 -> 0.0323",
+  "ok": true,
+  "detail": "(np.float64(0.1333324326456589), np.float64(0.03225103736847389))"
+ },
+ {
+  "check": "F7b ratio 1.00 -> 5.30",
+  "ok": true,
+  "detail": "5.300271482374428"
+ },
+ {
+  "check": "F8 MC rerun reproduces stored values",
+  "ok": true,
+  "detail": "0.0"
+ },
+ {
+  "check": "F8b Duffing t=10 p=2 deviation -5.8 % (Table 10)",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F8c pendulum t=10 deviations -2.4/-18.5/-71.4 %",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "OU final MC RMS uses M=65536, not preceding run",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "check": "F6e H=0.65 J=9 p=4 |z|<=1.4 at t=1",
+  "ok": true,
+  "detail": "[-4.0179728  -2.88406578 -1.64330987 -1.27576164]"
+ }
+]

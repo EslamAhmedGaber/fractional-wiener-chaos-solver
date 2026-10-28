@@ -1,0 +1,15 @@
+{
+ "orthonormal_degree_le3_maxdev": 1.1102230246251565e-15,
+ "wick3_orthogonal_to_degree_le2_maxabs": {
+  "Zk^3-3GkkZk": 2.601012434372198e-15,
+  "Zk^2Zl-GkkZl-2GklZk": 1.5228084685769768e-15,
+  "ZkZlZm-...": 1.3322676295501878e-15
+ },
+ "C_to_c_relation_maxdev": 1.7763568394002505e-15,
+ "u3_formula_vs_cholesky_maxdev": 0.0,
+ "wick_growth_coef_closed_form_vs_ode_maxdev": 2.8933841061604804e-15,
+ "wick_growth_var_formula_vs_sum_c2": 5.551115123125783e-17,
+ "wick_growth_N_coefficients": 56,
+ "G00_J1_T2_H075": 1.4142135623730951,
+ "sqrt2": 1.4142135623730951
+}
