@@ -397,6 +397,9 @@ def fig_cost(lay):
     for c,offset in [(ch[1],(4,5)),(ch[-1],(4,5))]:
         ax.annotate(f"$J={c['J']}$",(c['time'],c['relerr']),xytext=offset,
                     textcoords='offset points',fontsize=SMALL)
+    for c in mc:
+        ax.annotate(f"$M=2^{{{int(round(np.log2(c['M'])))}}}$",(c['time'],c['rmse']),xytext=(0,-11),
+                    textcoords='offset points',fontsize=SMALL,ha='center',color=MC_COL)
     ax.set_xlabel('CPU time (s)');ax.set_ylabel('variance error, OU at $t=0.5$')
     ax.legend(loc='upper right',fontsize=SMALL)
     ax.set_xlim(.011,22);ax.set_ylim(5e-5,.3)

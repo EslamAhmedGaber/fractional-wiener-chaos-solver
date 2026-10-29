@@ -1,8 +1,8 @@
 {
   ".gitattributes": "14eaabd5762a77d1c94babfefeea731c8521478eb7ec3040963875f824f681a6",
   ".gitignore": "7baba7f346c17d4a1fd5a9a87ebd5c6c5739e931cedc4a1633400917577c0cdb",
-  "CITATION.cff": "c26513f6a53b780498161261e91c8b1682a44bf1fca85a70df62d7dc361cd89f",
-  "README.md": "0335d978ea45e1d50ea715c499445ca05fa9cecf9adaa6fb8a6508a89166ae8f",
+  "CITATION.cff": "9f28f056b8c6a2042bc179983951d6cb5f26b637381b7f9e670df9a21a16cd86",
+  "README.md": "3fc073ba95b2d719a281d7bd0dd9cd26c99a6478f7c83edae3bb68b926e08d04",
   "docs/DATA_PROVENANCE.md": "6a58869c287b38bad6532171769372734ebc73b870d4eea15f190f34b3693bf2",
   "docs/METHOD.md": "52548e1ed3cb2cab95ea04722aee63d55433253bba65888834e9b05f7fa78c0c",
   "docs/PENDULUM_REFINEMENT.md": "3a303c8f5bac5f99e308b653c9c13e653507cf09c9a5268d3e0fdf1652949299",
@@ -169,7 +169,7 @@
   "requirements-tested.txt": "0c5450a2b4487e5d8679a08d9d384c3615267ca347a7b83f9ba8985ddc711797",
   "requirements.txt": "3ea6054e11eaf394509afe97a870deb78bf1702c3594e2e75d8fd3389aa18225",
   "scripts/generate_refinement_tables.py": "f1bda04bab04c33fefc9a41e8cd9991e27a1ee5e85b01932074f90a53a32c0a3",
-  "scripts/make_figures_v5.py": "80634954c70f6f46f2a3f0b4dcfac9e59490c17a6d96ff10d1d59e0564325f15",
+  "scripts/make_figures_v5.py": "c9c1d7868dd0406dfe87e1c777c1c1f5f08d2f66ebd92cdcf3ad735b9374a0f8",
   "scripts/run_campaign.py": "1339b1871f1d04e2bc9e2ac00e85037f110dacc8d8c43b81fea1d4f7c6f291ce",
   "scripts/verify_pendulum_refinement.py": "1c42ae2c06af3e84ecf1fa3626b0044bb486442266ceafb62d4572b2e34e4beb",
   "scripts/verify_release.py": "17b2731306bad59c93ad43163f4f310278d2175f49683ea8ab3d560c22f14e58"
