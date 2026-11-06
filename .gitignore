@@ -5,3 +5,7 @@ runs/
 figures/
 evidence/solver_snapshot/results/
 *.log
+
+journal_files/
+tables/
+evidence/round5/scratch/

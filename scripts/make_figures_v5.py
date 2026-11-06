@@ -216,8 +216,10 @@ def fig_limit(lay):
     for H in ['0.5', '0.51', '0.55', '0.6']:
         ax[0].plot(t, pc[H], color={'0.5':'0.15','0.51':'#9ecae1','0.55':'#4292c6','0.6':'#084594'}[H], lw=1.2, label=f'$H={H}$')
     mc = EX['pop_mc_H05']; tm = np.array(mc['t']); sel = slice(0, None, 8)
-    ax[0].plot(tm[sel], np.array(mc['var'])[sel], 'o', ms=2.4, mfc='none', mec=MC_COL, mew=0.8, label=r'Itô MC, $H=\frac{1}{2}$')
-    ax[0].set_xlabel('$t$'); ax[0].set_ylabel(r'Var $X(t)$, $J=129$'); ax[0].legend(loc='lower right', ncol=1)
+    ax[0].plot(tm[sel], np.array(mc['var'])[sel], 'o', ms=2.4, mfc='none', mec=MC_COL, mew=0.8, label=r'Monte Carlo, $H=\frac{1}{2}$')
+    ax[0].set_xlabel('$t$'); ax[0].set_ylabel(r'Var $X(t)$, $J=129$'); ax[0].set_ylim(-0.08, 2.75)
+    hh, ll = ax[0].get_legend_handles_labels(); lg1 = ax[0].legend(hh[:4], ll[:4], loc='upper right', ncol=2, title='CosChaos', title_fontsize=6.8, fontsize=6.8, columnspacing=0.5, handlelength=1.3)
+    ax[0].add_artist(lg1); ax[0].legend(hh[4:], ll[4:], loc='lower right', fontsize=6.8, handlelength=1.0)
     L = EX['limit']; h = np.array(L['H']) - 0.5; m = h > 0
     ou = np.abs(np.array(L['ou_var_T']) - L['ou_var_T'][0]); po = np.abs(np.array(L['pop_maxvar_J33']) - L['pop_maxvar_J33'][0])
     df = csv('fig4_classical_limit'); xs, ys = series(df, 1, 0); check('F4b OU equals V4 plotted', np.allclose(np.sort(ys), np.sort(ou[m])), (ys[:3], ou[m][:3]))
@@ -266,17 +268,17 @@ def fig_cubic(lay):
     eb = [series(df, 0, f'0:{i}') for i in range(16)]; lo = np.array([e[1].min() for e in eb]); hi = np.array([e[1].max() for e in eb])
     check('F6a dense MC matches v10_runs, a separate stream from Table 8',np.allclose(mcv,R10['mono_mc']['var'],rtol=1e-13))
     check('F6a p1 and p2 match general solver, not legacy precursor',all(np.allclose(series(df,0,j)[1],CU['sw'][f'0.5_0.75_65_{j+1}']['var'],rtol=1e-12) for j in (0,1)))
-    ax[0].plot(t, CU['sw']['0.5_0.75_65_1']['var'], color='0.45', **DEG_STY[1], label='$p=1$, $J=65$')
-    ax[0].plot(t, CU['sw']['0.5_0.75_65_2']['var'], color='#0072B2', **DEG_STY[2], label='$p=2$, $J=65$')
-    x4, y4 = series(df, 0, 2); ax[0].plot(x4, y4, 'D', color='#762a83', ms=3.4, label='$p=4$, $J=9$')
-    ax[0].errorbar(xs, mcv, yerr=[mcv - lo, hi - mcv], fmt='o', ms=2.4, color=MC_COL, mfc='none', mew=0.8, elinewidth=0.8, capsize=0, label=r'MC $\pm2$ s.e.')
+    ax[0].plot(t, CU['sw']['0.5_0.75_65_1']['var'], color='0.45', **DEG_STY[1], label='CosChaos, $p=1$, $J=65$')
+    ax[0].plot(t, CU['sw']['0.5_0.75_65_2']['var'], color='#0072B2', **DEG_STY[2], label='CosChaos, $p=2$, $J=65$')
+    x4, y4 = series(df, 0, 2); ax[0].plot(x4, y4, 'D', color='#762a83', ms=3.4, label='CosChaos, $p=4$, $J=9$')
+    ax[0].errorbar(xs, mcv, yerr=[mcv - lo, hi - mcv], fmt='o', ms=2.4, color=MC_COL, mfc='none', mew=0.8, elinewidth=0.8, capsize=0, label=r'Monte Carlo $\pm2$ s.e.')
     ax[0].set_xlabel('$t$'); ax[0].set_ylabel(r'Var $X(t)$'); ax[0].legend(loc='lower right')
     # (b) third central moment
     xm, ym = series(df, 1, 3); x4m, y4m = series(df, 1, 1)
-    ax[1].plot(t, 1e3 * np.array(CU['sw']['0.5_0.75_65_2']['m3']), color='#0072B2', **DEG_STY[2], label='$p=2$, $J=65$')
-    ax[1].axhline(0, color='0.45', **DEG_STY[1], label='$p=1$ (zero)')
-    ax[1].plot(x4m, y4m, 'D', color='#762a83', ms=3.4, label='$p=4$, $J=9$'); ax[1].plot(xm, ym, 'o', ms=2.4, color=MC_COL, mfc='none', mew=0.8, label='MC')
-    ax[1].set_ylim(-10, 1.0); ax[1].set_xlabel('$t$'); ax[1].set_ylabel(r'$\mathrm{E}[(X-\mathrm{E}X)^3]\times10^{3}$'); ax[1].legend(loc='lower right', ncol=2, columnspacing=0.7)
+    ax[1].plot(t, 1e3 * np.array(CU['sw']['0.5_0.75_65_2']['m3']), color='#0072B2', **DEG_STY[2], label='CosChaos, $p=2$, $J=65$')
+    ax[1].axhline(0, color='0.45', **DEG_STY[1], label='CosChaos, $p=1$ (zero)')
+    ax[1].plot(x4m, y4m, 'D', color='#762a83', ms=3.4, label='CosChaos, $p=4$, $J=9$'); ax[1].plot(xm, ym, 'o', ms=2.4, color=MC_COL, mfc='none', mew=0.8, label='Monte Carlo')
+    ax[1].set_ylim(-13.5, 1.0); ax[1].set_xlabel('$t$'); ax[1].set_ylabel(r'$\mathrm{E}[(X-\mathrm{E}X)^3]\times10^{3}$'); ax[1].legend(loc='lower center', ncol=2, fontsize=6.8, handlelength=1.4, columnspacing=0.6)
     # (c) degree refinement at t = 4 (V4 data; the J=65, p=2 square of H=0.75 corrected, see FIGURE_AUDIT_REPORT 0.1)
     dd = csv('fig8_degree_doublewell')
     cu = CU['sw']['0.5_0.75_65_2']; tt = np.array(cu['t']); v4 = np.array(cu['var'])[np.argmin(abs(tt - 4.0))]
@@ -289,14 +291,14 @@ def fig_cubic(lay):
         ysq = sq75 if s_sq == 3 else series(dd, 2, s_sq)[1][0]
         ax[2].plot([2], [ysq], 's', mfc='white', mec=HC(H), mew=1.0, ms=4.2)
     ax[2].plot([], [], 's', mfc='white', mec='0.3', label='$J=65$, $p=2$'); ax[2].axhline(0, color='0.6', lw=0.6)
-    ax[2].set_xticks([1, 2, 3, 4]); ax[2].set_xlabel('chaos degree $p$'); ax[2].set_ylabel(r'Var deviation at $t=4$ (%)'); ax[2].set_ylim(-8.5, 3); ax[2].legend(loc='lower right', fontsize=SMALL)
+    ax[2].set_xticks([1, 2, 3, 4]); ax[2].set_xlabel('chaos degree $p$'); ax[2].set_ylabel(r'Var deviation at $t=4$ (%)'); ax[2].set_ylim(-8.5, 3); ax[2].legend(loc='lower right', fontsize=SMALL, title='CosChaos', title_fontsize=SMALL)
     # (d) double well
     xa, ya = series(dd, 3, 0); xp, yp = series(dd, 3, 1)
-    ax[3].plot(xa, ya, 'o', ms=2.6, color=MC_COL, label='MC, all paths'); ax[3].plot(xp, yp, 's', ms=2.6, mfc='none', mec=MC_COL, mew=0.8, label=r'MC, $X(t)>0$')
+    ax[3].plot(xa, ya, 'o', ms=2.6, color=MC_COL, label='Monte Carlo, all paths'); ax[3].plot(xp, yp, 's', ms=2.6, mfc='none', mec=MC_COL, mew=0.8, label=r'Monte Carlo, $X(t)>0$')
     for s, p in [(2, 2), (3, 3), (4, 4)]:
-        x, y = series(dd, 3, s); ax[3].plot(x, y, color=['#0072B2', '#2166ac', '#762a83'][p - 2], **DEG_STY[p], label=f'$p={p}$, $J=9$')
+        x, y = series(dd, 3, s); ax[3].plot(x, y, color=['#0072B2', '#2166ac', '#762a83'][p - 2], **DEG_STY[p], label=f'CosChaos, $p={p}$, $J=9$')
     check('F6d MC all paths at t=4 = 0.0263', abs(ya[np.argmin(abs(xa - 4))] - 0.0263) < 1e-4, ya[np.argmin(abs(xa - 4))])
-    ax[3].set_xlabel('$t$'); ax[3].set_ylabel(r'Var $X(t)$, double well'); ax[3].set_ylim(0, 0.03); ax[3].legend(loc='lower right', ncol=2, columnspacing=0.7, fontsize=SMALL)
+    ax[3].set_xlabel('$t$'); ax[3].set_ylabel(r'Var $X(t)$, double well'); ax[3].set_ylim(0, 0.039); ax[3].legend(loc='upper center', ncol=2, columnspacing=0.6, fontsize=6.8, handlelength=1.4)
     for a, ss in zip(ax, 'abcd'): letter(a, ss)
     save(fig,'v5_fig06_cubic',lay,dict(panels={'a,b':'v12_cubic.json general solver and v10_runs.json dense MC (legacy extraction verified)',
       'c':'legacy fig8_degree_doublewell, corrected H=.75 p=2 J=65 point from v12_cubic at t=4',
@@ -312,7 +314,7 @@ def fig_barrier():
             x, y = series(bb, 4 + k, s); a.plot(x, y, marker=mk, color=c, ms=3.2, lw=1.0, label=lab)
         a.set_xlabel('$t$'); a.set_ylabel('$z$-score of Var'); a.set_ylim(-10, 3); a.set_xticks([0.25, 0.5, 0.75, 1.0])
         a.text(0.97, 0.95, f'$H={H}$', transform=a.transAxes, ha='right', va='top')
-        if k == 0: a.legend(loc='lower left')
+        if k == 0: a.legend(loc='lower left', title='CosChaos', title_fontsize=SMALL)
     x, y = series(bb, 4, 2); check('F6e H=0.65 J=9 p=4 |z|<=1.4 at t=1', abs(y[np.argmin(abs(x - 1))]) <= 1.4, y)
     for a,ss in zip(ax,'ab'):letter(a,ss)
     save(fig,'v5_figS5_barrier',lay,dict(panels={'a,b':'legacy fig8_barrier axes 4,5'},from_v4='11a,11b'))
@@ -325,9 +327,9 @@ def fig_osc(lay):
         ax[0].plot(sw.H, sw[col], color=c, ls=ls, lw=1.3, label=lab)
     for H in ['0.5', '0.7', '0.9']:
         R = OS['ref'][f'{H}_20.0']; ax[0].plot([float(H)] * 2, [R[0][0], R[1][1]], 'o', mfc='white', mec='0.2', ms=3.4, mew=0.8, ls='none')
-    ax[0].plot([], [], 'o', mfc='white', mec='0.2', label='quadrature')
+    ax[0].plot([], [], 'o', mfc='white', mec='0.2', label='reference')
     check('F7a Var V(20) 0.1333 -> 0.0323', abs(sw.varV.iloc[0] - 0.1333) < 1e-4 and abs(sw.varV.iloc[-1] - 0.0323) < 1e-4, (sw.varV.iloc[0], sw.varV.iloc[-1]))
-    ax[0].set_xlabel('$H$'); ax[0].set_ylabel('moment at $t=20$'); ax[0].legend(loc='lower left', ncol=1)
+    ax[0].set_xlabel('$H$'); ax[0].set_ylabel('moment at $t=20$'); ax[0].set_ylim(None, 0.245); ax[0].legend(loc='upper right', ncol=2, title='CosChaos ($J=257$)', title_fontsize=6.8, fontsize=6.8, columnspacing=0.6, handlelength=1.4)
     ax[1].plot(sw.H, sw.ratio, color='#542788', lw=1.4); ax[1].axhline(1, color='0.6', lw=0.6)
     check('F7b ratio 1.00 -> 5.30', abs(sw.ratio.iloc[-1] - 5.30) < 0.01, sw.ratio.iloc[-1])
     ax[1].set_xlabel('$H$'); ax[1].set_ylabel(r'$\omega^2\,$Var $Q$ / Var $V$ at $t=20$')
@@ -337,8 +339,8 @@ def fig_osc(lay):
         for tt in [2.0, 5.0, 10.0, 15.0, 20.0]:
             R = OS['ref'].get(f'{H}_{tt}')
             if R: ax[2].plot([tt, tt], [R[0][0], R[1][1]], 'o', mfc='white', mec='0.2', ms=2.8, mew=0.7, ls='none')
-    hs = [Line2D([], [], color='#0072B2', lw=1.1), Line2D([], [], color='#D55E00', lw=1.1)] + [Line2D([], [], color='0.3', ls=ls, lw=1.1) for ls in [(0, (1.2, 1.3)), (0, (5, 1.6)), '-']]
-    ax[2].legend(hs, [r'Var $Q$', r'Var $V$', r'$H=\frac{1}{2}$', '$H=0.7$', '$H=0.9$'], loc='upper right', ncol=2, columnspacing=0.8)
+    hs = [Line2D([], [], color='#0072B2', lw=1.1), Line2D([], [], color='#D55E00', lw=1.1)] + [Line2D([], [], color='0.3', ls=ls, lw=1.1) for ls in [(0, (1.2, 1.3)), (0, (5, 1.6)), '-']] + [Line2D([], [], ls='none', marker='o', mfc='white', mec='0.2', ms=2.8, mew=0.7)]
+    ax[2].legend(hs, [r'Var $Q$', r'Var $V$', r'$H=\frac{1}{2}$', '$H=0.7$', '$H=0.9$', 'reference'], loc='upper right', ncol=2, columnspacing=0.8, title='CosChaos', title_fontsize=SMALL)
     ax[2].set_xlabel('$t$'); ax[2].set_ylabel('variance, $J=513$'); ax[2].set_ylim(0, 0.36)
     for a, s in zip(ax, 'abc'): letter(a, s)
     save(fig, 'v5_fig07_oscillator', lay, dict(panels={'a,b': 'v12_oscillator.json sweep (J=257), ref (quadrature)', 'c': 'v12_oscillator.json curves (J=513), ref'}, from_v4='12a,12b,13a'))
@@ -352,14 +354,14 @@ def fig_nonlin_osc(lay):
     chk = OT['reproduction_max_rel_diff_at_stored_times']; check('F8 MC rerun reproduces stored values', max(chk.values()) < 1e-12, max(chk.values()))
     H = '0.9'; mc = np.array(OT['duff'][f'mc_{H}_1000']['var'])[:, 0]; se = np.array(OT['duff'][f'mc_{H}_1000']['se_var'])[:, 0]
     ax[0].fill_between(t, mc - 2 * se, mc + 2 * se, color=MC_COL, alpha=0.25, lw=0)
-    ax[0].plot(t, mc, color=MC_COL, lw=0.9, label=r'MC ($2^{17}$ paths)')
+    ax[0].plot(t, mc, color=MC_COL, lw=0.9, label=r'Monte Carlo ($2^{17}$ paths)')
     cols = {1: '0.45', 2: '#0072B2', 3: '#2166ac'}
     for p, k in [(1, '65_1'), (2, '65_2'), (3, '17_3')]:
-        v = np.array(OT['duff'][f'{H}_{k}']['var'])[:, 0]; ax[0].plot(t, v, color=cols[p], **DEG_STY[p], label=f'$p={p}$, $J={k.split("_")[0]}$')
+        v = np.array(OT['duff'][f'{H}_{k}']['var'])[:, 0]; ax[0].plot(t, v, color=cols[p], **DEG_STY[p], label=f'CosChaos, $p={p}$, $J={k.split("_")[0]}$')
     ax[0].set_xlabel('$t$'); ax[0].set_ylabel(r'Duffing Var $Q(t)$, $H=0.9$'); ax[0].legend(loc='lower right'); ax[0].set_xlim(0, 10)
     ax[1].fill_between(t[m], -200 * se[m] / mc[m], 200 * se[m] / mc[m], color=MC_COL, alpha=0.2, lw=0)
     for p, k in [(1, '65_1'), (2, '65_2'), (3, '17_3')]:
-        v = np.array(OT['duff'][f'{H}_{k}']['var'])[:, 0]; ax[1].plot(t[m], 100 * (v[m] / mc[m] - 1), color=cols[p], **DEG_STY[p], label=f'$p={p}$')
+        v = np.array(OT['duff'][f'{H}_{k}']['var'])[:, 0]; ax[1].plot(t[m], 100 * (v[m] / mc[m] - 1), color=cols[p], **DEG_STY[p], label=f'CosChaos, $p={p}$')
     i10 = -1; check('F8b Duffing t=10 p=2 deviation -5.8 % (Table 10)', abs(100 * (np.array(OT['duff'][f'{H}_65_2']['var'])[i10, 0] / mc[i10] - 1) + 5.8) < 0.06)
     ax[1].axhline(0, color='0.6', lw=0.6); ax[1].set_xlabel('$t$'); ax[1].set_ylabel(r'deviation of Var $Q$ from MC (%)'); ax[1].legend(loc='lower right'); ax[1].set_xlim(0, 10)
     for H in ['0.6', '0.75', '0.9']:
@@ -368,7 +370,7 @@ def fig_nonlin_osc(lay):
         ax[2].fill_between(t[m], 100 * (-2 * sep[m] / mcp[m]), 100 * (2 * sep[m] / mcp[m]), color=HC(H), alpha=0.15, lw=0)
         ax[2].plot(t[m], 100 * (v[m] / mcp[m] - 1), color=HC(H), lw=1.3, label=f'$H={H}$')
     check('F8c pendulum t=10 deviations -2.4/-18.5/-71.4 %', all(abs(100 * (np.array(OT['pend'][f'{H}_65_1']['var'])[-1, 0] / np.array(OT['pend'][f'mc_{H}_1000']['var'])[-1, 0] - 1) - d) < 0.06 for H, d in [('0.6', -2.4), ('0.75', -18.5), ('0.9', -71.4)]))
-    ax[2].axhline(0, color='0.6', lw=0.6); ax[2].set_xlabel('$t$'); ax[2].set_ylabel(r'pendulum: deviation of Var $Q$ (%)'); ax[2].legend(loc='lower left'); ax[2].set_xlim(0, 10)
+    ax[2].axhline(0, color='0.6', lw=0.6); ax[2].set_xlabel('$t$'); ax[2].set_ylabel(r'pendulum: deviation of Var $Q$ (%)'); ax[2].legend(loc='lower left', title='CosChaos, $p=1$, $J=65$', title_fontsize=SMALL); ax[2].set_xlim(0, 10)
     degree = J_(V, 'evidence', 'pendulum_degree_refinement', 'final_diagnostics.json')['selected']
     ps = np.array([r['p'] for r in degree])
     ef = np.array([r['error_full'] for r in degree]); ej = np.array([r['error_same_J'] for r in degree])
@@ -376,8 +378,8 @@ def fig_nonlin_osc(lay):
     check('F8d degree-eight displacement improvement', abs(ef[-1]+14.060528912354197)<1e-10)
     check('F8d nonmonotonic first two degrees retained', ef[1] < ef[0])
     ax[3].axhline(0, color='0.65', lw=0.7)
-    ax[3].plot(ps, ef, 'o-', color='#0072B2', ms=3.5, label='full fBm reference')
-    ax[3].plot(ps, ej, 's--', color='#D55E00', ms=3.2, label='same-mode reference')
+    ax[3].plot(ps, ef, 'o-', color='#0072B2', ms=3.5, label='CosChaos vs. full fBm reference')
+    ax[3].plot(ps, ej, 's--', color='#D55E00', ms=3.2, label='CosChaos vs. same-mode reference')
     ax[3].set(xticks=ps, xlabel='chaos degree $p$', ylabel='pendulum: variance deviation (%)', ylim=(-82,12))
     ax[3].legend(loc='lower right')
     ax[3].text(0.04,0.96,r'$H=0.9$, $J=3$, $t=10$',transform=ax[3].transAxes,ha='left',va='top',fontsize=SMALL)
@@ -391,9 +393,9 @@ def fig_cost(lay):
     fig, ax = plt.subplots(figsize=(W, 2.6), constrained_layout=True)
     ou=BE['ou'];ch=ou['chaos'];mc=ou['mc']
     ax.loglog([c['time'] for c in ch],[c['relerr'] for c in ch],'-o',
-              color='#0072B2',ms=4,label='solver: absolute relative error')
+              color='#0072B2',ms=4,label='CosChaos: absolute relative error')
     ax.loglog([c['time'] for c in mc],[c['rmse'] for c in mc],'s',
-              color=MC_COL,mfc='none',ms=4,label='MC: relative RMS, 6 repetitions')
+              color=MC_COL,mfc='none',ms=4,label='Monte Carlo: relative RMS, 6 repetitions')
     for c,offset in [(ch[1],(4,5)),(ch[-1],(4,5))]:
         ax.annotate(f"$J={c['J']}$",(c['time'],c['relerr']),xytext=offset,
                     textcoords='offset points',fontsize=SMALL)

@@ -1,0 +1,8 @@
+reference 401 18.8
+reference 801 35.3
+reference 1601 70.2
+ours 401 33 28.5
+ours 401 129 25.9
+ours 1601 33 102.4
+ours 1601 129 123.0
+written
