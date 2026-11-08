@@ -11,8 +11,8 @@ solve. From this output:
 
 The cosine and half-integer sine Gram matrices are in closed form through 1F1(2H-1; 2H; ix).
 
-Manuscript: "CosChaos: a fractional Wiener chaos solver for stochastic differential equations driven by fractional
-Brownian motion, with the full solution and its probability law" (E. Ahmed, M. A. El-Beltagy, A. Etman,
+Manuscript: "CosChaos: a cosine Wiener chaos solver for stochastic differential equations driven by fractional
+Brownian motion" (E. Ahmed, M. A. El-Beltagy, A. Etman,
 S. M. Elnady; manuscript prepared for Chaos, Solitons & Fractals).
 
 ## Layout
