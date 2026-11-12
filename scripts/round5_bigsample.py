@@ -1,5 +1,5 @@
-"""Round 5: 10^7 samples of xi for a converged CosChaos configuration (the first 10^6 are those of the ladder runs).
-Run from working/:  python scripts/round5_bigsample.py <config-name> [nbatches=200]
+"""10^7 samples of xi for a converged CosChaos configuration (the first 10^6 are those of the ladder runs).
+Run from the repository root:  python scripts/round5_bigsample.py <config-name> [nbatches=200]
 Writes evidence/round5/big_<name>_H<H>.npz and evidence/round5/P5_bigsample.json.
 """
 import json, math, os, sys, time

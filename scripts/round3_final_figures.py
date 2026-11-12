@@ -1,4 +1,4 @@
-"""Round 3 final figures (one visual language with the v5 figures of the manuscript).
+"""final figures (one visual language with the v5 figures of the manuscript).
 
 Visual key used in every figure of the paper: colour = Hurst index (viridis, dark = persistent; make_figures_v5.HC);
 CosChaos = solid line, filled circles; FWHE = dashed line, open squares; reference solution = dark grey line;
@@ -8,7 +8,7 @@ Reads evidence/round3_fwhe/workprecision.json; the dense memory reference curve 
 Also reads evidence/round4/P4_cubic_event.json (Fig. 9(d)), evidence/round3_full/P1_pathwise.json, P2_wick_law.json, P3_cubic_law.json, evidence/round3_fwhe/benchmarks.json
 and evidence/data/v12_examples.json (population).  Writes figures/{one,two}/v7_fig_*.{pdf,png} and
 journal_files/graphical_abstract.{pdf,png} (= Fig. 1).
-Run from working/:  python scripts/round3b_figures.py
+Run from the repository root:  python scripts/round3b_figures.py
 """
 import json, os, sys
 import numpy as np
@@ -25,8 +25,8 @@ W = json.load(open(os.path.join(EV, 'workprecision.json'))); BM = json.load(open
 FD = os.path.join(ROOT, 'evidence', 'round3_full')
 P1 = json.load(open(os.path.join(FD, 'P1_pathwise.json'))); P2 = json.load(open(os.path.join(FD, 'P2_wick_law.json')))
 P3 = json.load(open(os.path.join(FD, 'P3_cubic_law.json'))) if os.path.exists(os.path.join(FD, 'P3_cubic_law.json')) else None
-P4 = json.load(open(os.path.join(ROOT, 'evidence', 'round4', 'P4_cubic_event.json')))   # Round 4: event probability (round4_probability.py)
-EV_LO, EV_HI, EV_LEVEL = 0.4, 0.9, 0.7   # Round 5: level axis extended to 0.9
+P4 = json.load(open(os.path.join(ROOT, 'evidence', 'round4', 'P4_cubic_event.json')))   # event probability (round4_probability.py)
+EV_LO, EV_HI, EV_LEVEL = 0.4, 0.9, 0.7   # level axis extended to 0.9
 EXd = json.load(open(os.path.join(ROOT, 'evidence', 'data', 'v12_examples.json'), encoding='utf-8'))
 MC_COL = '#c0392b'
 MCS = dict(ls='none', marker='o', ms=3.4, mfc='none', mec=MC_COL, mew=0.8)
@@ -242,7 +242,7 @@ def fig_cubiclaw(lay):
         ax[2].loglog(Js, [0.9 * c['5,2']['t1'] * (J / 5) ** (-float(Hh)) for J in Js], color='0.55', ls=':', lw=0.9)
     ax[2].set_xlabel('modes $J$'); ax[2].set_ylabel('pathwise relative RMS error, $t=1$'); ax[2].legend(loc='lower left', fontsize=7.2, title='CosChaos, $p=2$', title_fontsize=7.2); ax[2].set_xlim(4, 90)
     ax[2].set_xticks(Js); ax[2].xaxis.set_major_formatter(mpl.ticker.ScalarFormatter()); ax[2].xaxis.set_minor_formatter(mpl.ticker.NullFormatter())
-    # (d) tail probability P(X(4) > c): CosChaos (J=9, p=5) as baseline, refined CosChaos index sets (Round 5, stars),
+    # (d) tail probability P(X(4) > c): CosChaos (J=9, p=5) as baseline, refined CosChaos index sets (, stars),
     #     Monte Carlo (95% intervals), Gaussian with the Monte Carlo mean and variance
     lev = np.array(P4['meta']['levels']); it = P4['meta']['times'].index(4.0); m = (lev >= EV_LO - 1e-9) & (lev <= EV_HI + 1e-9)
     RC = json.load(open(os.path.join(ROOT, 'evidence', 'round5', 'P5_refined_curve.json')))

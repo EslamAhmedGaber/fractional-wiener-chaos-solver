@@ -1,10 +1,10 @@
-"""Round 3: grid refinement of the Caputo-memory benchmark (EEM22 Eq. (78)).
+"""grid refinement of the Caputo-memory benchmark (EEM22 Eq. (78)).
 
 The FWHE first-order reference (EEM22 Eq. (57)) and the solver's memory branch both evaluate the Green function g
 and the mean psi by Talbot inversion on a uniform grid and interpolate them with cubic splines.  This script refines
 that grid (n = 401, 801, 1601) for the reference and (ngrid = 401, 1601) for the solver, so that the comparison is
 not limited by a shared discretisation.  Deterministic; no random numbers.
-Run from working/:  python scripts/round3_memory_reference.py
+Run from the repository root:  python scripts/round3_memory_reference.py
 """
 import json, os, sys, time
 import numpy as np

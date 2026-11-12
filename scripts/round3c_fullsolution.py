@@ -1,4 +1,4 @@
-"""Round 3c: verification of the full-solution capability (pathwise solution and probability law).
+"""verification of the full-solution capability (pathwise solution and probability law).
 
 The solver returns X_{J,p}(t) = sum_alpha c_alpha(t) Phi_alpha(xi), an explicit function of the Gaussian coordinates
 xi = L^{-1} Z of the fBm path, Z_k = int_0^T h_k dB_H.  This script checks, for H = 0.55, 0.75, 0.95:
@@ -15,7 +15,7 @@ xi = L^{-1} Z of the fBm path, Z_k = int_0^T h_k dB_H.  This script checks, for 
       scheme (512 and 256 steps), with 95 % confidence intervals (batch means, 20 batches), and the cost of the
       surrogate law (one solve + 10^6 evaluations) against the cost of the Monte Carlo law.
 Seeds are fixed (numpy default_rng, seed 20261105 + offsets).  Solver: evidence/round3_fwhe/solver_v1.1.3.
-Run from working/:  python scripts/round3c_fullsolution.py [P1|P2|P2b|P3]
+Run from the repository root:  python scripts/round3c_fullsolution.py [P1|P2|P2b|P3]
 """
 import json, math, os, sys, time
 import numpy as np

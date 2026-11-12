@@ -9,3 +9,10 @@ evidence/solver_snapshot/results/
 journal_files/
 tables/
 evidence/round5/scratch/
+
+# Generated outputs of the current reproduction package
+reproduction/2026-11-12/reports/
+reproduction/2026-11-12/scripts/results/
+reproduction/2026-11-12/scripts/round12_experiments/results/
+reproduction/2026-11-12/scripts/fixed_model_benchmark/results/*
+!reproduction/2026-11-12/scripts/fixed_model_benchmark/results/reference.json

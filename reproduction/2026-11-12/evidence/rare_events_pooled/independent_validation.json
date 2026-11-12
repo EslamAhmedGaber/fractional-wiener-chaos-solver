@@ -1,0 +1,966 @@
+{
+  "checks": [
+    {
+      "name": "direct two-dimensional Gram quadrature H=0.55",
+      "value": 6.068001656700517e-11,
+      "tolerance": 2e-09,
+      "passed": true
+    },
+    {
+      "name": "whitening H=0.55",
+      "value": 2.220446049250313e-16,
+      "tolerance": 1e-11,
+      "passed": true
+    },
+    {
+      "name": "nested Cholesky H=0.55",
+      "value": 2.731148640577885e-14,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "T scaling H=0.55",
+      "value": 1.1102230246251565e-16,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "endpoint variance H=0.55",
+      "value": 4.440892098500626e-16,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "direct two-dimensional Gram quadrature H=0.75",
+      "value": 9.483525076348087e-13,
+      "tolerance": 2e-09,
+      "passed": true
+    },
+    {
+      "name": "whitening H=0.75",
+      "value": 2.220446049250313e-16,
+      "tolerance": 1e-11,
+      "passed": true
+    },
+    {
+      "name": "nested Cholesky H=0.75",
+      "value": 4.263256414560601e-14,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "T scaling H=0.75",
+      "value": 1.1102230246251565e-16,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "endpoint variance H=0.75",
+      "value": 4.440892098500626e-16,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "direct two-dimensional Gram quadrature H=0.95",
+      "value": 1.2387313397255184e-13,
+      "tolerance": 2e-09,
+      "passed": true
+    },
+    {
+      "name": "whitening H=0.95",
+      "value": 2.220446049250313e-16,
+      "tolerance": 1e-11,
+      "passed": true
+    },
+    {
+      "name": "nested Cholesky H=0.95",
+      "value": 1.6828465704277207e-13,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "T scaling H=0.95",
+      "value": 1.3877787807814457e-17,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "endpoint variance H=0.95",
+      "value": 4.440892098500626e-16,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "Brownian Gram identity",
+      "value": 0.0,
+      "tolerance": 1e-14,
+      "passed": true
+    },
+    {
+      "name": "correlated/orthogonal quadratic variance",
+      "value": 1.0658141036401503e-14,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "centred quadratic mean",
+      "value": 5.689350900117685e-16,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "double_well_reference_H0.55.json p=hits/M c=0.0",
+      "value": 0.0,
+      "tolerance": 1e-15,
+      "passed": true
+    },
+    {
+      "name": "double_well_reference_H0.55.json binomial se c=0.0",
+      "value": 0.0,
+      "tolerance": 1e-13,
+      "passed": true
+    },
+    {
+      "name": "double_well_reference_H0.55.json p=hits/M c=-0.5",
+      "value": 0.0,
+      "tolerance": 1e-15,
+      "passed": true
+    },
+    {
+      "name": "double_well_reference_H0.55.json binomial se c=-0.5",
+      "value": 0.0,
+      "tolerance": 1e-13,
+      "passed": true
+    },
+    {
+      "name": "double_well_reference_H0.75.json p=hits/M c=0.0",
+      "value": 0.0,
+      "tolerance": 1e-15,
+      "passed": true
+    },
+    {
+      "name": "double_well_reference_H0.75.json binomial se c=0.0",
+      "value": 0.0,
+      "tolerance": 1e-13,
+      "passed": true
+    },
+    {
+      "name": "double_well_reference_H0.75.json p=hits/M c=-0.5",
+      "value": 0.0,
+      "tolerance": 1e-15,
+      "passed": true
+    },
+    {
+      "name": "double_well_reference_H0.75.json binomial se c=-0.5",
+      "value": 0.0,
+      "tolerance": 1e-13,
+      "passed": true
+    },
+    {
+      "name": "double_well_reference_H0.95.json p=hits/M c=0.0",
+      "value": 0.0,
+      "tolerance": 1e-15,
+      "passed": true
+    },
+    {
+      "name": "double_well_reference_H0.95.json binomial se c=0.0",
+      "value": 0.0,
+      "tolerance": 1e-13,
+      "passed": true
+    },
+    {
+      "name": "double_well_reference_H0.95.json p=hits/M c=-0.5",
+      "value": 0.0,
+      "tolerance": 1e-15,
+      "passed": true
+    },
+    {
+      "name": "double_well_reference_H0.95.json binomial se c=-0.5",
+      "value": 0.0,
+      "tolerance": 1e-13,
+      "passed": true
+    },
+    {
+      "name": "single_well_reference_H0.55.json p=hits/M c=0.8",
+      "value": 0.0,
+      "tolerance": 1e-15,
+      "passed": true
+    },
+    {
+      "name": "single_well_reference_H0.55.json binomial se c=0.8",
+      "value": 0.0,
+      "tolerance": 1e-13,
+      "passed": true
+    },
+    {
+      "name": "single_well_reference_H0.55.json p=hits/M c=0.9",
+      "value": 0.0,
+      "tolerance": 1e-15,
+      "passed": true
+    },
+    {
+      "name": "single_well_reference_H0.55.json binomial se c=0.9",
+      "value": 0.0,
+      "tolerance": 1e-13,
+      "passed": true
+    },
+    {
+      "name": "single_well_reference_H0.55.json p=hits/M c=1.0",
+      "value": 0.0,
+      "tolerance": 1e-15,
+      "passed": true
+    },
+    {
+      "name": "single_well_reference_H0.55.json binomial se c=1.0",
+      "value": 0.0,
+      "tolerance": 1e-13,
+      "passed": true
+    },
+    {
+      "name": "single_well_reference_H0.55.json p=hits/M c=1.1",
+      "value": 0.0,
+      "tolerance": 1e-15,
+      "passed": true
+    },
+    {
+      "name": "single_well_reference_H0.55.json binomial se c=1.1",
+      "value": 0.0,
+      "tolerance": 1e-13,
+      "passed": true
+    },
+    {
+      "name": "all 36 candidate records present",
+      "value": 0.0,
+      "tolerance": 0.5,
+      "passed": true
+    },
+    {
+      "name": "ray norm reproduction single 0.55 0.8 p1",
+      "value": 0.0,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "ray norm reproduction single 0.55 0.8 p3",
+      "value": 0.0,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "ray norm reproduction single 0.55 0.9 p1",
+      "value": 0.0,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "ray norm reproduction single 0.55 0.9 p3",
+      "value": 0.0,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "ray norm reproduction single 0.55 1.0 p1",
+      "value": 0.0,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "ray norm reproduction single 0.55 1.0 p3",
+      "value": 0.0,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "ray norm reproduction single 0.55 1.1 p1",
+      "value": 0.0,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "ray norm reproduction single 0.55 1.1 p3",
+      "value": 0.0,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "ray norm reproduction single 0.75 0.8 p1",
+      "value": 0.0,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "ray norm reproduction single 0.75 0.8 p3",
+      "value": 0.0,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "ray norm reproduction single 0.75 0.9 p1",
+      "value": 0.0,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "ray norm reproduction single 0.75 0.9 p3",
+      "value": 0.0,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "ray norm reproduction single 0.75 1.0 p1",
+      "value": 0.0,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "ray norm reproduction single 0.75 1.0 p3",
+      "value": 0.0,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "ray norm reproduction single 0.75 1.1 p1",
+      "value": 0.0,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "ray norm reproduction single 0.75 1.1 p3",
+      "value": 0.0,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "ray norm reproduction single 0.95 0.8 p1",
+      "value": 0.0,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "ray norm reproduction single 0.95 0.8 p3",
+      "value": 0.0,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "ray norm reproduction single 0.95 0.9 p1",
+      "value": 0.0,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "ray norm reproduction single 0.95 0.9 p3",
+      "value": 0.0,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "ray norm reproduction single 0.95 1.0 p1",
+      "value": 0.0,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "ray norm reproduction single 0.95 1.0 p3",
+      "value": 0.0,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "ray norm reproduction single 0.95 1.1 p1",
+      "value": 0.0,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "ray norm reproduction single 0.95 1.1 p3",
+      "value": 0.0,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "ray norm reproduction double 0.55 0.0 p1",
+      "value": 0.0,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "ray norm reproduction double 0.55 0.0 p3",
+      "value": 0.0,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "ray norm reproduction double 0.55 -0.5 p1",
+      "value": 0.0,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "ray norm reproduction double 0.55 -0.5 p3",
+      "value": 0.0,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "ray norm reproduction double 0.75 0.0 p1",
+      "value": 0.0,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "ray norm reproduction double 0.75 0.0 p3",
+      "value": 0.0,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "ray norm reproduction double 0.75 -0.5 p1",
+      "value": 0.0,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "ray norm reproduction double 0.75 -0.5 p3",
+      "value": 0.0,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "ray norm reproduction double 0.95 0.0 p1",
+      "value": 0.0,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "ray norm reproduction double 0.95 0.0 p3",
+      "value": 0.0,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "ray norm reproduction double 0.95 -0.5 p1",
+      "value": 0.0,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "ray norm reproduction double 0.95 -0.5 p3",
+      "value": 0.0,
+      "tolerance": 1e-05,
+      "passed": true
+    }
+  ],
+  "replications": [
+    {
+      "model": "single",
+      "H": 0.55,
+      "c": 0.8,
+      "degree": 3,
+      "M": 65536,
+      "seed": [
+        20261111,
+        1501,
+        0,
+        0,
+        0
+      ],
+      "p": 0.003476596517071989,
+      "se": 2.649663245461973e-05,
+      "z_vs_original": 0.4247364108948413,
+      "vrf": 75.29749004266826,
+      "seconds": 8.083610599999702,
+      "references": [
+        {
+          "source": "stored_20million",
+          "p": 0.0034632000000000018,
+          "se": 1.3575349914948167e-05,
+          "z": 0.449972965036728
+        },
+        {
+          "source": "new_16million",
+          "p": 0.003471970558166504,
+          "se": 1.4360608453328936e-05,
+          "z": 0.15349260134583975
+        }
+      ]
+    },
+    {
+      "model": "single",
+      "H": 0.55,
+      "c": 0.9,
+      "degree": 3,
+      "M": 65536,
+      "seed": [
+        20261111,
+        1501,
+        0,
+        0,
+        1
+      ],
+      "p": 0.000854935904464874,
+      "se": 7.327359981232857e-06,
+      "z_vs_original": 2.9277192660271867,
+      "vrf": 242.7655829497791,
+      "seconds": 9.16323569999986,
+      "references": [
+        {
+          "source": "stored_20million",
+          "p": 0.0008553000000000002,
+          "se": 6.232727511336944e-06,
+          "z": 0.037849262259077344
+        },
+        {
+          "source": "new_16million",
+          "p": 0.0008508563041687012,
+          "se": 7.118415527215208e-06,
+          "z": 0.39934323026313995
+        }
+      ]
+    },
+    {
+      "model": "single",
+      "H": 0.55,
+      "c": 1.0,
+      "degree": 3,
+      "M": 65536,
+      "seed": [
+        20261111,
+        1501,
+        0,
+        0,
+        2
+      ],
+      "p": 0.00015346985528129405,
+      "se": 1.5652412023487258e-06,
+      "z_vs_original": 0.7479381356545227,
+      "vrf": 955.6832049276517,
+      "seconds": 9.661720399999922,
+      "references": [
+        {
+          "source": "stored_20million",
+          "p": 0.00015460000000000013,
+          "se": 2.6636135404243303e-06,
+          "z": 0.365805519557261
+        },
+        {
+          "source": "new_16million",
+          "p": 0.00015348196029663086,
+          "se": 3.0243733530511934e-06,
+          "z": 0.0035546430350518157
+        }
+      ]
+    },
+    {
+      "model": "single",
+      "H": 0.55,
+      "c": 1.1,
+      "degree": 3,
+      "M": 65536,
+      "seed": [
+        20261111,
+        1501,
+        0,
+        0,
+        3
+      ],
+      "p": 1.9297502873500238e-05,
+      "se": 2.4849305477897616e-07,
+      "z_vs_original": 0.5485066400818643,
+      "vrf": 4768.527513692182,
+      "seconds": 8.640627100000074,
+      "references": [
+        {
+          "source": "stored_20million",
+          "p": 2.0950000000000018e-05,
+          "se": 1.0138112660688004e-06,
+          "z": 1.5831232338433878
+        },
+        {
+          "source": "new_16million",
+          "p": 1.8298625946044922e-05,
+          "se": 1.044348220852741e-06,
+          "z": 0.9304822542288876
+        }
+      ]
+    },
+    {
+      "model": "single",
+      "H": 0.75,
+      "c": 0.8,
+      "degree": 3,
+      "M": 65536,
+      "seed": [
+        20261111,
+        1501,
+        0,
+        1,
+        0
+      ],
+      "p": 0.0038729591868516574,
+      "se": 2.8077091581378368e-05,
+      "z_vs_original": 1.5927956691353466,
+      "vrf": 74.67469926352281,
+      "seconds": 9.661110999999892,
+      "references": [
+        {
+          "source": "stored_20million",
+          "p": 0.003846450000000003,
+          "se": 1.3829375358526414e-05,
+          "z": 0.8469887220782452
+        }
+      ]
+    },
+    {
+      "model": "single",
+      "H": 0.75,
+      "c": 0.9,
+      "degree": 3,
+      "M": 65536,
+      "seed": [
+        20261111,
+        1501,
+        0,
+        1,
+        1
+      ],
+      "p": 0.0007716914011028971,
+      "se": 6.3221305706126426e-06,
+      "z_vs_original": 1.8723905928331313,
+      "vrf": 294.3754155480612,
+      "seconds": 7.2195370000004,
+      "references": [
+        {
+          "source": "stored_20million",
+          "p": 0.0007694999999999987,
+          "se": 5.530446600320579e-06,
+          "z": 0.2608900046886571
+        }
+      ]
+    },
+    {
+      "model": "single",
+      "H": 0.75,
+      "c": 1.0,
+      "degree": 3,
+      "M": 65536,
+      "seed": [
+        20261111,
+        1501,
+        0,
+        1,
+        2
+      ],
+      "p": 9.601702055230656e-05,
+      "se": 9.748636274053117e-07,
+      "z_vs_original": 0.4348564252068182,
+      "vrf": 1541.4834249722944,
+      "seconds": 10.148093700000118,
+      "references": [
+        {
+          "source": "stored_20million",
+          "p": 9.419999999999988e-05,
+          "se": 2.2278483500177215e-06,
+          "z": 0.7471905894357764
+        }
+      ]
+    },
+    {
+      "model": "single",
+      "H": 0.75,
+      "c": 1.1,
+      "degree": 3,
+      "M": 65536,
+      "seed": [
+        20261111,
+        1501,
+        0,
+        1,
+        3
+      ],
+      "p": 6.555254140237812e-06,
+      "se": 1.0538694060877727e-07,
+      "z_vs_original": 0.40741016984602724,
+      "vrf": 9006.025281325063,
+      "seconds": 9.903949999999895,
+      "references": [
+        {
+          "source": "stored_20million",
+          "p": 6.550000000000013e-06,
+          "se": 5.394174431225421e-07,
+          "z": 0.009559659196463682
+        }
+      ]
+    },
+    {
+      "model": "single",
+      "H": 0.95,
+      "c": 0.8,
+      "degree": 3,
+      "M": 65536,
+      "seed": [
+        20261111,
+        1501,
+        0,
+        2,
+        0
+      ],
+      "p": 0.004366019225626939,
+      "se": 2.9929096310813024e-05,
+      "z_vs_original": 0.6082558770432089,
+      "vrf": 74.04883259536109,
+      "seconds": 7.752470800000083,
+      "references": [
+        {
+          "source": "stored_20million",
+          "p": 0.004377750000000005,
+          "se": 1.3808748951988652e-05,
+          "z": 0.3558978272196227
+        }
+      ]
+    },
+    {
+      "model": "single",
+      "H": 0.95,
+      "c": 0.9,
+      "degree": 1,
+      "M": 65536,
+      "seed": [
+        20261111,
+        1501,
+        0,
+        2,
+        1
+      ],
+      "p": 0.0006278826755263601,
+      "se": 5.716495680857192e-06,
+      "z_vs_original": 0.6684910171382767,
+      "vrf": 292.99893284653285,
+      "seconds": 8.148431999999957,
+      "references": [
+        {
+          "source": "stored_20million",
+          "p": 0.0006330000000000005,
+          "se": 5.688444074610817e-06,
+          "z": 0.6345467787085279
+        }
+      ]
+    },
+    {
+      "model": "single",
+      "H": 0.95,
+      "c": 1.0,
+      "degree": 1,
+      "M": 65536,
+      "seed": [
+        20261111,
+        1501,
+        0,
+        2,
+        2
+      ],
+      "p": 4.415804223677134e-05,
+      "se": 5.212119185982597e-07,
+      "z_vs_original": 1.0316141909541425,
+      "vrf": 2480.173286566854,
+      "seconds": 7.624410800000078,
+      "references": [
+        {
+          "source": "stored_20million",
+          "p": 4.519999999999985e-05,
+          "se": 1.5405626677721782e-06,
+          "z": 0.6406748425899571
+        }
+      ]
+    },
+    {
+      "model": "single",
+      "H": 0.95,
+      "c": 1.1,
+      "degree": 1,
+      "M": 65536,
+      "seed": [
+        20261111,
+        1501,
+        0,
+        2,
+        3
+      ],
+      "p": 1.107270755180593e-06,
+      "se": 1.8337600567147553e-08,
+      "z_vs_original": 0.007445279878398014,
+      "vrf": 50244.4852066549,
+      "seconds": 7.573859300000095,
+      "references": [
+        {
+          "source": "stored_20million",
+          "p": 8.5e-07,
+          "se": 2.0197955180753146e-07,
+          "z": 1.2685292072999133
+        }
+      ]
+    },
+    {
+      "model": "double",
+      "H": 0.55,
+      "c": 0.0,
+      "degree": 3,
+      "M": 65536,
+      "seed": [
+        20261111,
+        1501,
+        1,
+        0,
+        0
+      ],
+      "p": 0.0005188652820205495,
+      "se": 1.1357363332019437e-05,
+      "z_vs_original": 0.8859048284707702,
+      "vrf": 61.34712916741617,
+      "seconds": 7.482854900000348,
+      "references": [
+        {
+          "source": "new_crude",
+          "p": 0.0005159378051757812,
+          "se": 7.840462613769994e-06,
+          "z": 0.2121234415879321
+        }
+      ]
+    },
+    {
+      "model": "double",
+      "H": 0.55,
+      "c": -0.5,
+      "degree": 3,
+      "M": 65536,
+      "seed": [
+        20261111,
+        1501,
+        1,
+        0,
+        1
+      ],
+      "p": 4.553344469459292e-05,
+      "se": 1.4273116532098716e-06,
+      "z_vs_original": 0.42685523298499634,
+      "vrf": 341.0304653280056,
+      "seconds": 7.674140699999953,
+      "references": [
+        {
+          "source": "new_crude",
+          "p": 4.8995018005371094e-05,
+          "se": 2.4166869513592587e-06,
+          "z": 1.2333227036536532
+        }
+      ]
+    },
+    {
+      "model": "double",
+      "H": 0.75,
+      "c": 0.0,
+      "degree": 3,
+      "M": 65536,
+      "seed": [
+        20261111,
+        1501,
+        1,
+        1,
+        0
+      ],
+      "p": 0.0016756372512380907,
+      "se": 1.741457071514719e-05,
+      "z_vs_original": 1.4983496641901068,
+      "vrf": 84.1678433435223,
+      "seconds": 9.311385800000153,
+      "references": [
+        {
+          "source": "new_crude",
+          "p": 0.0016628503799438477,
+          "se": 1.4067608674472538e-05,
+          "z": 0.5711812940837866
+        }
+      ]
+    },
+    {
+      "model": "double",
+      "H": 0.75,
+      "c": -0.5,
+      "degree": 3,
+      "M": 65536,
+      "seed": [
+        20261111,
+        1501,
+        1,
+        1,
+        1
+      ],
+      "p": 0.0002469515956565013,
+      "se": 3.1117416732981866e-06,
+      "z_vs_original": 1.125660876496423,
+      "vrf": 389.06088548357405,
+      "seconds": 8.31698090000009,
+      "references": [
+        {
+          "source": "new_crude",
+          "p": 0.00024712085723876953,
+          "se": 5.42695360004566e-06,
+          "z": 0.02705683853814444
+        }
+      ]
+    },
+    {
+      "model": "double",
+      "H": 0.95,
+      "c": 0.0,
+      "degree": 3,
+      "M": 65536,
+      "seed": [
+        20261111,
+        1501,
+        1,
+        2,
+        0
+      ],
+      "p": 0.004111666375101132,
+      "se": 2.8282601017528668e-05,
+      "z_vs_original": 0.0993460584612245,
+      "vrf": 78.1105846680121,
+      "seconds": 7.558433899999727,
+      "references": [
+        {
+          "source": "new_crude",
+          "p": 0.004047274589538574,
+          "se": 2.1920768373949343e-05,
+          "z": 1.799505973864098
+        }
+      ]
+    },
+    {
+      "model": "double",
+      "H": 0.95,
+      "c": -0.5,
+      "degree": 3,
+      "M": 65536,
+      "seed": [
+        20261111,
+        1501,
+        1,
+        2,
+        1
+      ],
+      "p": 0.0009010370594558913,
+      "se": 6.935310433464306e-06,
+      "z_vs_original": 0.966815422116944,
+      "vrf": 285.5876484705398,
+      "seconds": 7.680565199999819,
+      "references": [
+        {
+          "source": "new_crude",
+          "p": 0.0008783340454101562,
+          "se": 1.0228080149227662e-05,
+          "z": 1.8371588782194215
+        }
+      ]
+    }
+  ]
+}

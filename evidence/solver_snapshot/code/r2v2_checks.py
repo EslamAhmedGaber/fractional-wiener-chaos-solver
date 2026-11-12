@@ -1,4 +1,4 @@
-"""Checks of the formulas added in Round 2 Version 2 (Sections 2.4 and 2.5.3).
+"""Checks of the formulas added in Version 2 (Sections 2.4 and 2.5.3).
 (1) Table 3: degree-three Hermite elements are orthonormal, and the correlated Wick monomials of degree
     three are orthogonal to all polynomials of degree <= 2 (exact Gauss-Hermite quadrature, 3 coordinates).
 (2) relation c_{2e_k} = sqrt2 C_kk, c_{e_k+e_l} = 2 C_kl between :Z^T A Z: and the orthonormal basis.

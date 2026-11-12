@@ -1,9 +1,9 @@
-"""Round 5, Phase 1: sharp Monte Carlo reference for the cubic single well (a = -1, b = 1, X0 = 1, sigma = 0.5, T = 4).
+"""sharp Monte Carlo reference for the cubic single well (a = -1, b = 1, X0 = 1, sigma = 0.5, T = 4).
 Exact (Davies-Harte) fBm increments, Heun scheme, H = 0.55, 0.75, 0.95; 512 steps (2 x 10^7 paths) and 256 steps
 (10^7 paths, step check). Batches of 50 000 paths (10 pieces of 5 000), independent seeds
 SeedSequence([20261105, 5, iH, nsteps, batch]). Each batch is saved as one .npz (exceedance counts on a 0.01 level grid,
 power sums, a 16 000-bin histogram on [-2, 2] at t = 4, and counts at t = 1), so a stop loses at most one batch per worker.
-Run from working/:  python scripts/round5_mc_reference.py <worker> <n_workers>
+Run from the repository root:  python scripts/round5_mc_reference.py <worker> <n_workers>
 """
 import os, sys, time
 import numpy as np

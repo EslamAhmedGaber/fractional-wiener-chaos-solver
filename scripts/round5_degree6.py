@@ -1,4 +1,4 @@
-"""Round 5 (optional run): CosChaos J = 9, p = 6 for the cubic event P(X(4) > c), H = 0.55, 0.75, 0.95.
+"""(optional run): CosChaos J = 9, p = 6 for the cubic event P(X(4) > c), H = 0.55, 0.75, 0.95.
 
 The exact product tensor of hwc (Phi_a Phi_g = sum_nu V Phi_nu) has 9.4e7 stored entries at J = 9, p = 6; hwc builds it
 in Python lists (about 6 GB).  This script builds the SAME entries without lists and stores each unordered pair {a, g}
@@ -8,7 +8,7 @@ the two products used by the cubic projection with compiled scatter loops (numba
 hwc._prod_full, hwc._prod_low and hwc._prod3_low are replaced for this run only; solver_v1.1.3 is not modified.
 Check: at J = 9, p = 4 the low-memory engine reproduces the coefficients of the original engine (stored in the output).
 Sampling: 10^6 xi, seed 20261105 + 300 + iH as in round3c P3 / round4 (same xi as the p <= 5 runs).
-Output: evidence/round5/P5_cubic_event_p6.json (incremental).  Run from working/:  python scripts/round5_degree6.py
+Output: evidence/round5/P5_cubic_event_p6.json (incremental).  Run from the repository root:  python scripts/round5_degree6.py
 """
 import json, math, os, sys, time, itertools
 import numpy as np

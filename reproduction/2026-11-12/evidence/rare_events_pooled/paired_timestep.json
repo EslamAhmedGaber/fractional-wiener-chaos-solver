@@ -1,0 +1,86 @@
+[
+  {
+    "model": "single",
+    "H": 0.55,
+    "c": 0.9,
+    "degree": 3,
+    "M": 65536,
+    "seed": [
+      20261111,
+      1502,
+      0
+    ],
+    "coarse": 0.000855919553663359,
+    "fine": 0.0008563691898185252,
+    "difference": 4.496361551661174e-07,
+    "coarse_se": 7.424224967305093e-06,
+    "fine_se": 7.434486857103208e-06,
+    "paired_difference_se": 1.2083800731924575e-06,
+    "relative_difference_percent": 0.0525049430212921,
+    "z_difference": 0.37209828690588176,
+    "seconds": 21.10009439999976
+  },
+  {
+    "model": "single",
+    "H": 0.95,
+    "c": 1.1,
+    "degree": 1,
+    "M": 65536,
+    "seed": [
+      20261111,
+      1502,
+      1
+    ],
+    "coarse": 1.157433357176615e-06,
+    "fine": 1.1577151225136429e-06,
+    "difference": 2.8176533702791847e-10,
+    "coarse_se": 2.186559797664094e-08,
+    "fine_se": 2.1867185779071136e-08,
+    "paired_difference_se": 2.8176533702791847e-10,
+    "relative_difference_percent": 0.024338054461631866,
+    "z_difference": 1.0,
+    "seconds": 19.12851210000008
+  },
+  {
+    "model": "double",
+    "H": 0.55,
+    "c": -0.5,
+    "degree": 3,
+    "M": 65536,
+    "seed": [
+      20261111,
+      1502,
+      2
+    ],
+    "coarse": 5.008187834670377e-05,
+    "fine": 5.008872204747474e-05,
+    "difference": 6.843700770970081e-09,
+    "coarse_se": 3.231922548452304e-06,
+    "fine_se": 3.2319383402985144e-06,
+    "paired_difference_se": 2.6467588815883298e-08,
+    "relative_difference_percent": 0.013663157076524197,
+    "z_difference": 0.25856910573067204,
+    "seconds": 19.460703100000046
+  },
+  {
+    "model": "double",
+    "H": 0.95,
+    "c": -0.5,
+    "degree": 3,
+    "M": 65536,
+    "seed": [
+      20261111,
+      1502,
+      3
+    ],
+    "coarse": 0.0008902382730869337,
+    "fine": 0.0008902382730869337,
+    "difference": 0.0,
+    "coarse_se": 6.881307128254189e-06,
+    "fine_se": 6.881307128254189e-06,
+    "paired_difference_se": 0.0,
+    "relative_difference_percent": 0.0,
+    "z_difference": null,
+    "seconds": 25.021380099999988
+  }
+]

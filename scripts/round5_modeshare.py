@@ -1,6 +1,6 @@
-"""Round 5: variance share of each cosine coordinate xi_k in the degree-one CosChaos solution at t = 4
+"""variance share of each cosine coordinate xi_k in the degree-one CosChaos solution at t = 4
 (cubic single well, J = 33).  Guides the anisotropic index sets of round5_ladder.py.
-Run from working/:  python scripts/round5_modeshare.py   ->  evidence/round5/P5_mode_shares.json
+Run from the repository root:  python scripts/round5_modeshare.py   ->  evidence/round5/P5_mode_shares.json
 """
 import json, os, sys
 import numpy as np

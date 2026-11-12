@@ -1,4 +1,4 @@
-"""Round 5, Phase 2: CosChaos on general downward-closed index sets for the cubic single well
+"""CosChaos on general downward-closed index sets for the cubic single well
 dX = (aX - bX^3) dt + sigma dB_H (a = -1, b = 1, X0 = 1, sigma = 0.5, T = 4).
 
 Same Galerkin coefficient law as hwc.solve (orthonormal form, exact Hermite products, DOP853, rtol 1e-8, atol 1e-10), but
@@ -8,7 +8,7 @@ pair once; values float64) written to a memory-mapped scratch folder (deleted at
 Check: for S = TD(9, 4) the coefficients equal those of hwc.solve (stored in the output).
 Samples: xi[:, :9] are the 10^6 coordinates of the earlier runs (seed 20261105 + 300 + iH, 20 batches of 50 000);
 extra coordinates (j >= 9) come from SeedSequence([20261105, 5, 77, iH]).
-Run from working/:  python scripts/round5_ladder.py <config-name> [<config-name> ...]
+Run from the repository root:  python scripts/round5_ladder.py <config-name> [<config-name> ...]
 """
 import ctypes, json, math, os, shutil, sys, time
 import numpy as np

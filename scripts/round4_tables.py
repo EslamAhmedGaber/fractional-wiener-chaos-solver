@@ -1,7 +1,7 @@
-"""Round 4 numbers: Gaussian (mean-variance) law against the exact Wick growth law, and the event probability
+"""numbers: Gaussian (mean-variance) law against the exact Wick growth law, and the event probability
 P(X(4) > c) of the cubic single well (evidence/round4/P4_cubic_event.json, scripts/round4_probability.py).
 Writes source/tables/round4_numbers.tex (macros used in the text), supplement/source/tables/tab_cubicevent.tex
-and evidence/round4/derived_numbers_4.json.  Run from working/:  python scripts/round4_tables.py
+and evidence/round4/derived_numbers_4.json.  Run from the repository root:  python scripts/round4_tables.py
 """
 import json, math, os
 import numpy as np

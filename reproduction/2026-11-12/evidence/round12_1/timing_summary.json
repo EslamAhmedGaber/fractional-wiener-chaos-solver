@@ -1,0 +1,20 @@
+{
+  "0.75": {
+    "sobol_N": 2048,
+    "sobol_seconds": 0.39180330000817776,
+    "sobol_max_error_percent": 0.2972935463970594,
+    "cos_moments_seconds": 0.24804119998589158,
+    "cos_paths_seconds": 0.41781120002269745,
+    "samecount_speedup": 21.74504201786669,
+    "moment_speedup": 1.579589600560162
+  },
+  "0.95": {
+    "sobol_N": 1024,
+    "sobol_seconds": 0.26265210000565276,
+    "sobol_max_error_percent": 0.5724921545104733,
+    "cos_moments_seconds": 0.43634800001746044,
+    "cos_paths_seconds": 0.6076538000488654,
+    "samecount_speedup": 15.022877169981943,
+    "moment_speedup": 0.6019326317415062
+  }
+}

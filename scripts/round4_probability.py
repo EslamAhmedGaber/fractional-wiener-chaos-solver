@@ -1,4 +1,4 @@
-"""Round 4: probability of an event for the cubic model, dX = (aX - bX^3)dt + sig dB_H (a = -1, b = 1, X0 = 1,
+"""probability of an event for the cubic model, dX = (aX - bX^3)dt + sig dB_H (a = -1, b = 1, X0 = 1,
 sig = 0.5, T = 4), H = 0.55, 0.75, 0.95.
 
 Event: X(t) > c, for a grid of levels c and times t = 0.5, 1, ..., 4.
@@ -8,7 +8,7 @@ Event: X(t) > c, for a grid of levels c and times t = 0.5, 1, ..., 4.
   Gaussian  normal law with the Monte Carlo mean and variance (mean-variance estimate)
 95 % intervals: batch means over 20 batches of 50 000.  Seeds: numpy default_rng(20261105 + 400 + iH) (Monte Carlo,
 512 steps), + 410 + iH (256 steps), + 300 + iH (CosChaos coordinates, as in round3c P3).
-Run from working/:  python scripts/round4_probability.py   ->  evidence/round4/P4_cubic_event.json
+Run from the repository root:  python scripts/round4_probability.py   ->  evidence/round4/P4_cubic_event.json
 """
 import json, math, os, sys, time
 import numpy as np

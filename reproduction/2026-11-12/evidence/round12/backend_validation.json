@@ -1,0 +1,17 @@
+[
+  {
+    "test": "K=J agreement with published tensor solver p=3",
+    "error": 1.3322676295501878e-15,
+    "passed": true
+  },
+  {
+    "test": "K=J agreement with published tensor solver p=5",
+    "error": 1.27675647831893e-15,
+    "passed": true
+  },
+  {
+    "test": "conditional projection vs full 4D quadrature",
+    "error": 1.5265566588595902e-16,
+    "passed": true
+  }
+]

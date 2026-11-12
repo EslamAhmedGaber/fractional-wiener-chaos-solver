@@ -1,7 +1,7 @@
-"""Round 3b tables from evidence/round3_fwhe/workprecision.json (written by round3b_workprecision.py).
+"""tables from evidence/round3_fwhe/workprecision.json (written by round3b_workprecision.py).
 Writes source/tables/tab_memory.tex (main text), tab_fwhe_work.tex and tab_fwhe_memory.tex (supplement), and
 evidence/round3_fwhe/derived_numbers_3b.json with every number quoted in the text.
-Run from working/:  python scripts/round3b_tables.py
+Run from the repository root:  python scripts/round3b_tables.py
 """
 import json, os
 import numpy as np

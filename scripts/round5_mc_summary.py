@@ -1,7 +1,7 @@
-"""Round 5, Phase 1 summary: the sharp Monte Carlo reference from evidence/round5/mc/*.npz.
+"""summary: the sharp Monte Carlo reference from evidence/round5/mc/*.npz.
 95 % intervals: batch means over the 50 000-path batches (1.96 sd / sqrt(nb)). Quantiles from the 16 000-bin histogram
 (linear interpolation inside a bin, width 2.5e-4), intervals from the batch quantiles.
-Writes evidence/round5/P5_mc_reference.json.  Run from working/:  python scripts/round5_mc_summary.py
+Writes evidence/round5/P5_mc_reference.json.  Run from the repository root:  python scripts/round5_mc_summary.py
 """
 import glob, json, math, os
 import numpy as np

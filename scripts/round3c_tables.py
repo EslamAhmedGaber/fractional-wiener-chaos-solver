@@ -1,8 +1,8 @@
-"""Round 3c tables and number macros (every number quoted in the text comes from here).
+"""tables and number macros (every number quoted in the text comes from here).
 Reads evidence/round3_full/P1_pathwise.json, P2_wick_law.json, P3_cubic_law.json, reference_checks.json and
 evidence/round3_fwhe/workprecision.json; writes source/tables/tab_pathou.tex, tab_wicklaw.tex (main text),
 tab_cubiclaw.tex (main text), tab_cubicpath.tex, tab_wicksamples.tex, tab_cubiclawfull.tex (supplement) and
-source/tables/round3_numbers.tex (LaTeX macros).  Run from working/:  python scripts/round3c_tables.py
+source/tables/round3_numbers.tex (LaTeX macros).  Run from the repository root:  python scripts/round3c_tables.py
 """
 import json, math, os
 import numpy as np

@@ -1,4 +1,4 @@
-"""Round 3 benchmarks: cosine-coordinate solver versus the fractional Wiener-Hermite expansion (FWHE) of
+"""benchmarks: cosine-coordinate solver versus the fractional Wiener-Hermite expansion (FWHE) of
 El-Beltagy, Etman and Maged, Chaos Solitons Fractals 156 (2022) 111847 [EEM22].
 
 Examples (EEM22 numbering):
@@ -17,7 +17,7 @@ FWHE values are computed in two ways:
 'ours' uses the default ODE tolerances (rtol 1e-11); 'ours_fast' uses rtol 1e-7, atol 1e-9.
 The solver is the v1.1.1 snapshot (evidence/round3_fwhe/solver_snapshot_v1.1.1).  CPU times are wall-clock times of
 this implementation on one machine.  No random numbers are used.
-Run from working/:  python scripts/round3_fwhe_benchmarks.py
+Run from the repository root:  python scripts/round3_fwhe_benchmarks.py
 """
 import json, math, os, sys, time
 import numpy as np

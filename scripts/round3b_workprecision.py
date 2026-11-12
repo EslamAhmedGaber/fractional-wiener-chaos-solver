@@ -1,4 +1,4 @@
-"""Round 3b: work-precision curves, reference solutions and the memory-branch speed-up.
+"""work-precision curves, reference solutions and the memory-branch speed-up.
 
 For the three FWHE benchmark examples (OU = EEM22 Example 1 with linear drift, Wick growth = EEM22 Example 2,
 Caputo memory model = EEM22 Eq. (78)) and H = 0.55, 0.75, 0.95 this script records, for the cosine solver and for
@@ -11,7 +11,7 @@ Reference solutions (Appendix F of the manuscript):
   memory  first-chaos variance sig^2 <g(t-.)psi, g(t-.)psi>_H by Gauss-Jacobi quadrature on Talbot-inverted Green
           functions, Richardson-extrapolated from 801- and 1601-point grids (grid error O(h^{3/2})).
 The solver is v1.1.3 (evidence/round3_fwhe/solver_v1.1.3): identical numerics to v1.1.1, faster memory branch.
-No random numbers are used.  Run from working/:  python scripts/round3b_workprecision.py
+No random numbers are used.  Run from the repository root:  python scripts/round3b_workprecision.py
 """
 import json, math, os, sys, time, importlib.util
 import numpy as np

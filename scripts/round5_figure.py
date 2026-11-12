@@ -1,5 +1,5 @@
-"""Round 5 supplementary figure: refinement of P(X(4) > c) for the cubic single well against the 2x10^7-path reference.
-Run from working/ after round5_tables.py:  python scripts/round5_figure.py  ->  figures/one/v8_fig_tailrefine.{pdf,png}
+"""supplementary figure: refinement of P(X(4) > c) for the cubic single well against the 2x10^7-path reference.
+Run after round5_tables.py:  python scripts/round5_figure.py  ->  figures/one/v8_fig_tailrefine.{pdf,png}
 Visual key as in the paper: colour = H (viridis), CosChaos solid/filled; the grey band is the Monte Carlo 95% interval.
 """
 import json, os, sys
