@@ -1,0 +1,23 @@
+[
+  {
+    "H": 0.55,
+    "seed": 20261175,
+    "paths": 8192,
+    "max_normalised_cross_change_pct": 0.020561041453569535,
+    "terminal_order_switches": 0
+  },
+  {
+    "H": 0.75,
+    "seed": 20261195,
+    "paths": 8192,
+    "max_normalised_cross_change_pct": 0.005325140898392067,
+    "terminal_order_switches": 0
+  },
+  {
+    "H": 0.95,
+    "seed": 20261215,
+    "paths": 8192,
+    "max_normalised_cross_change_pct": 0.0014794768344432345,
+    "terminal_order_switches": 0
+  }
+]

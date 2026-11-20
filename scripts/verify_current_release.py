@@ -42,4 +42,10 @@ assert np.allclose(r.mean[:,0],stored['mean'],rtol=1e-8,atol=1e-11)
 assert np.allclose(r.variance()[:,0],stored['var'],rtol=1e-8,atol=1e-11)
 print('PASS current engine: Brownian limit, Gram positivity/parity, cubic mean/variance',flush=True)
 subprocess.run([sys.executable,str(D/'scripts/round12_experiments/validate_backend.py')],check=True)
-print('ALL REQUESTED CURRENT-RELEASE CHECKS PASSED',flush=True)
+snapshot = R / 'reproduction' / '2026-11-20'
+for line in (snapshot / 'SHA256SUMS.txt').read_text(encoding='utf-8').splitlines():
+    expected, name = line.split('  ', 1)
+    assert hashlib.sha256((snapshot/name).read_bytes()).hexdigest() == expected, name
+records = json.loads((snapshot/'evidence/end_to_end.json').read_text(encoding='utf-8'))
+assert len(records) == 4 and all(record['both_eligible'] for record in records)
+print('PASS release 1.3.0 benchmark files and four timed eligibility records', flush=True)

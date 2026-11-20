@@ -3,3 +3,6 @@
 *.png binary
 *.zip binary
 *.npz binary
+*.npy binary
+# Preserve the bytes of the deposited dataset and its SHA-256 manifest.
+reproduction/2026-11-20/** -text

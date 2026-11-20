@@ -1,63 +1,35 @@
 # CosChaos — cosine-coordinate fractional Wiener chaos solver
 
-**Current release: [v1.2.0](https://github.com/EslamAhmedGaber/fractional-wiener-chaos-solver/releases/tag/v1.2.0)**
+**Software and benchmark release [v1.3.0](https://github.com/EslamAhmedGaber/fractional-wiener-chaos-solver/releases/tag/v1.3.0)**
 
-Code and numerical evidence accompanying the 12 November 2026 manuscript,
-*CosChaos: a cosine Wiener chaos solver for stochastic differential equations driven by fractional Brownian motion*.
+CosChaos approximates the solution of a fractional stochastic differential equation by a polynomial in independent Gaussian coordinates. A closed-form cosine Gram matrix represents the fractional forcing, and a deterministic Galerkin system gives the polynomial coefficients. These coefficients give means and covariances directly. Evaluating the polynomial with Gaussian inputs gives samples for other observables, including the terminal ordering of two competing populations.
 
-CosChaos constructs finite Wiener-chaos approximations for standard fractional Brownian motion,
-1/2 <= H < 1, with Wick/Skorohod noise under the model assumptions stated in the manuscript.
-A deterministic coefficient system produces a polynomial in Gaussian coordinates. Its coefficients
-give moments, and evaluating the polynomial gives approximate paths and sampled distributional outputs.
-The cosine Gram matrix is available in closed form. For affine equations with H-independent coefficients,
-the correlated-coordinate coefficient solution can be reused across H. Ordinary nonlinear drift generally
-requires H-dependent coefficient systems.
+## Reproduce the 20 November 2026 manuscript benchmarks
 
-## Quick reproduction of the current figures and tables
+The [benchmark directory](reproduction/2026-11-20) contains the version of the solver used for the three manuscript benchmarks, all simulation drivers, fixed seeds, synthetic numerical results and figure/table generators. From the repository root, run
 
-```sh
-python -m pip install -r requirements.txt
-python reproduction/2026-11-12/scripts/make_figures.py
-python reproduction/2026-11-12/scripts/make_flagship.py
-python reproduction/2026-11-12/scripts/make_tables.py
-python scripts/verify_current_release.py
-```
+~~~sh
+python -m pip install -r reproduction/2026-11-20/requirements.txt
+python reproduction/2026-11-20/scripts/reproduce.py
+~~~
 
-These plotting commands use stored evidence, not new Monte Carlo runs. They regenerate the five main
-figures and the new main/supplementary tables. The verification command also runs small numerical
-checks of the current engine and experimental backend. See
-[the reproduction guide](reproduction/2026-11-12/README.md) for full experiment commands and costs.
+This regenerates the numerical tables and figures from stored records. To repeat the nine independent references, run the reference driver. To repeat the four end-to-end comparisons, run the timed verification driver after refreshing the references.
 
-## What is included
+~~~sh
+python reproduction/2026-11-20/scripts/refresh_references.py
+python reproduction/2026-11-20/scripts/verify_timed_outputs.py
+~~~
 
-| Location | Purpose |
+| Model | Outputs in the benchmark |
 |---|---|
-| `solver/` | Core coefficient solver, closed-form Gram matrix and reference examples |
-| `reproduction/2026-11-12/scripts/` | Current figure/table generators and inference, rare-event and selective-projection drivers |
-| `reproduction/2026-11-12/evidence/` | Stored numerical records used by the current manuscript |
-| `reproduction/2026-11-12/reference_tables/` | Reference generated tables for comparison |
-| `scripts/`, `evidence/` | Previously released experiments, retained for reproducibility |
-| `docs/RELEASE_VALIDATION_v1.2.0.md` | Tests performed for this publication and their scope |
+| Fractional Malthusian growth | Exact-law checks, mode and chaos truncation, FWHE and discrete Wick comparisons, multi-Hurst reuse |
+| Logistic population growth | Mean, variance and terminal quantiles, independent WIS path references at six parameter settings |
+| Coupled two-species competition | Means, the full covariance matrix and the terminal probability of reversed population ordering |
 
-The update includes noisy oscillator Hurst inference, ray-corrected importance sampling for cubic
-models, independent rare-event replication, paired time-step checks and selective projection for a
-saturating tanh drift. A tanh drift is not a trained neural network. Reported variance-reduction factors
-are not wall-clock speedups. Finite chaos solutions and distributional outputs have truncation error;
-sampling adds statistical uncertainty. Timings refer to the recorded workloads and hardware.
+In the coupled model at H = 0.95, the recorded end-to-end times for eight-time means and covariances were 0.302 s for CosChaos and 9.79 s for control-variate WIS-RK4. Both met the stated 1% criterion. The terminal-ordering experiment used a separate degree-two polynomial and yielded 24.48%, compared with 24.79% in the independent reference. Timings are machine-dependent. See the [measured timings](reproduction/2026-11-20/evidence/end_to_end.json) and [benchmark instructions](reproduction/2026-11-20/README.md).
 
-The `solver/` implementation is unchanged from v1.1.3. The selective-projection implementation is an
-experimental model-specific backend under the reproduction directory; it is not a general extension
-of every core-solver API. Historical directory identifiers are retained so paths and stored records remain
-traceable. The old reproduction instructions are in [docs/REPRODUCING_v1.1.3.md](docs/REPRODUCING_v1.1.3.md).
+## Earlier experiments and citation
 
-## Citation and availability
+The [12 November reproduction package](reproduction/2026-11-12) and legacy solver and drivers remain available for the earlier experiments. The code used for the November 20 comparisons is in [the dated solver directory](reproduction/2026-11-20/evidence/solver).
 
-Use `CITATION.cff` to cite this software version. The release ZIP contains the tagged repository and its
-SHA-256 manifest. The manuscript, journal correspondence and private future-work material are not
-included in this software release. No archival DOI is claimed by this release.
-
-## Reuse and data provenance
-
-A software reuse license has not yet been selected in this repository. Public visibility alone does not
-grant an unrestricted software license. Third-party data retain their source terms; see
-[docs/DATA_PROVENANCE.md](docs/DATA_PROVENANCE.md).
+Use [CITATION.cff](CITATION.cff) to cite this release. Its downloadable benchmark asset contains only the code and scientific data, together with requirements and reproduction instructions. The published file hashes are also listed in [the snapshot manifest](reproduction/2026-11-20/SHA256SUMS.txt). See [data provenance](docs/DATA_PROVENANCE.md) for the earlier datasets.
