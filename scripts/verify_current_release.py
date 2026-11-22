@@ -48,4 +48,6 @@ for line in (snapshot / 'SHA256SUMS.txt').read_text(encoding='utf-8').splitlines
     assert hashlib.sha256((snapshot/name).read_bytes()).hexdigest() == expected, name
 records = json.loads((snapshot/'evidence/end_to_end.json').read_text(encoding='utf-8'))
 assert len(records) == 4 and all(record['both_eligible'] for record in records)
-print('PASS release 1.3.0 benchmark files and four timed eligibility records', flush=True)
+rev = json.loads((snapshot/'evidence/P3_lotka_volterra/reversal_checks.json').read_text(encoding='utf-8'))
+assert rev['checks_failed'] == []
+print('PASS release 1.3.1 benchmark files, four timed eligibility records and reversal checks', flush=True)

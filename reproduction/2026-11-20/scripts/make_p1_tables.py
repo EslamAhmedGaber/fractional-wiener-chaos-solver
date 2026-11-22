@@ -109,6 +109,7 @@ macros.update(
     SweepMaxErr=sig(max(sw_errs), 2),
     SweepSetup=sig(sw['setup_s'], 2),
     SweepQuery=sig(sw['query_s'], 2),
+    SweepTotal=sig(sw['setup_s'] + sw['query_s'], 2),
     SweepErrHigh=sig(sw_errs[-1], 2),
 )
 
@@ -120,7 +121,7 @@ with open(os.path.join(TAB, 'numbers_p1.tex'), 'w', encoding='utf-8') as fh:
 # Worked example table
 lines = [
     r'\begin{widetable}\centering\small',
-    r"\caption{Problem~1 worked example ($H=0.75$, $T=2$, $\mu=0.2$, $\sigma=0.5$, $J=3$), recomputable by hand from the two values of $M_H$ in Section~\ref{sec:gram}. Variances from coefficients; ``exact'': lognormal variance.}\label{tab:worked}",
+    r"\caption{Worked example for Problem~1 ($H=0.75$, $T=2$, $\mu=0.2$, $\sigma=0.5$, $J=3$), recomputable by hand from the two values of $M_H$ in Section~\ref{sec:gram}. Variances come from the coefficients; ``exact'' is the lognormal variance.}\label{tab:worked}",
     r'\begin{tabular}{@{}llL{0.54\linewidth}@{}}\toprule',
     r'Step & Source & Value\\\midrule',
     r'Gram matrix & Prop.~\ref{prop:gram} & $G_{00}=' + f(G[0, 0], 6) + r'$, $G_{11}=' + f(G[1, 1], 6) + r'$, $G_{22}=' + f(G[2, 2], 6) + r'$, $G_{02}=' + f(G[0, 2], 6) + r'$\\',

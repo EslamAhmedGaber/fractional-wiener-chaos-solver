@@ -49,7 +49,7 @@ def pick(rows):
 
 lines = [
     r'\begin{widetable}\centering\small',
-    r'\caption{Problem~2 (all six $(\lambda,H)$ cases): cheapest configuration of each method meeting the $1\%$ tolerance on mean and variance at all eight times (\emph{not met}: most accurate tested). Columns give observed maximum relative errors against the numerical WIS reference and single-thread times. Bold: cheapest eligible winner.}\label{tab:compare}',
+    r'\caption{Problem~2: cheapest setting of each method that meets the $1\%$ criterion at all eight output times.}\label{tab:compare}',
     r'\begin{tabular}{@{}cclllrrr@{}}\toprule',
     r'$\lambda$ & $H$ & Method & Setting & & Mean (\%) & Var.\ (\%) & Time (s)\\\midrule',
 ]
@@ -64,7 +64,7 @@ for lam, H in CASES:
     best = min((p for p in picks if p[2]), key=lambda p: p[1]['seconds'], default=None)
     chosen[f'{lam}_{H}'] = {m: dict(row=r, ok=ok) for m, r, ok in picks}
     for i, (m, r, ok) in enumerate(picks):
-        t = sig(r['seconds'], 2)
+        t = sig(r['seconds'], 3)
         if best is not None and m == best[0]:
             t = rf'\textbf{{{t}}}'
         mark = '' if ok else r'\emph{not met}'
@@ -79,11 +79,8 @@ for lam, H in CASES:
         lines.append(' & '.join(cells) + r'\\')
     lines.append(r'\addlinespace[2pt]')
 lines[-1] = r'\bottomrule\end{tabular}'
-lines.append(
-    r'\par\smallskip{\footnotesize Settings: $J$ modes, degree $p$ (\CC{}); time step $\Delta t$ (FWHE); '
-    r'$n$ steps on $[0,T]$, $M$ sampled paths. Eligibility follows the common pointwise rule in Section~\ref{sec:results}. '
-    r'Reference relative SE is at most $\RefSEmax\%$ everywhere.\par}'
-)
+# Concise note (skill 3.52): settings, timing scope, bold/not-met rule and reference SE make the table self-contained.
+lines.append(r'\par\smallskip{\footnotesize\justifynote Settings: $J$ modes, degree $p$ (\CC{}); time step $\Delta t$ (FWHE); $n$ steps on $[0,T]$, $M$ paths (samplers). Time: single-thread wall-clock including noise preparation; boundaries in Section~\ref{sec:results} and \ref{app:comparators}. Bold: fastest setting meeting the $1\%$ criterion; \emph{not met}: most accurate tested setting, which fails the criterion even if faster. Reference relative SE $\le\RefSEmax\%$.\par}')
 lines.append(r'\end{widetable}')
 open(os.path.join(TAB, 't5_compare.tex'), 'w', encoding='utf-8').write('\n'.join(lines) + '\n')
 
@@ -106,13 +103,13 @@ def fw(lam, H, dt):
 # Mean error over ALL six cases (no excluded H = 0.55!)
 M['PopMeanErr'] = sig(max(cc(l, h, 33, 2)['max_mean'] for l, h in CASES), 2)
 M['PopVarErr'] = sig(cc(0.02, 0.95, 17, 2)['max_var'], 2)
-M['PopVarTime'] = sig(cc(0.02, 0.95, 17, 2)['seconds'], 2)
+M['PopVarTime'] = sig(cc(0.02, 0.95, 17, 2)['seconds'], 3)
 M['PopVarErrStrong'] = sig(cc(0.05, 0.95, 17, 2)['max_var'], 2)
-M['PopVarTimeStrong'] = sig(cc(0.05, 0.95, 17, 2)['seconds'], 2)
+M['PopVarTimeStrong'] = sig(cc(0.05, 0.95, 17, 2)['seconds'], 3)
 M['PopVarErrMidStrong'] = sig(cc(0.05, 0.75, 65, 2)['max_var'], 2)
-M['PopVarTimeMidStrong'] = sig(cc(0.05, 0.75, 65, 2)['seconds'], 2)
-M['PopMidWinTime'] = sig(chosen['0.05_0.75']['CosChaos']['row']['seconds'], 2)
-M['PopMidWeakWinTime'] = sig(chosen['0.02_0.75']['CosChaos']['row']['seconds'], 2)
+M['PopVarTimeMidStrong'] = sig(cc(0.05, 0.75, 65, 2)['seconds'], 3)
+M['PopMidWinTime'] = sig(chosen['0.05_0.75']['CosChaos']['row']['seconds'], 3)
+M['PopMidWeakWinTime'] = sig(chosen['0.02_0.75']['CosChaos']['row']['seconds'], 3)
 M['PopDegOneFloor'] = sig(cc(0.02, 0.95, 65, 1)['max_var'], 2)
 M['PopFwheFloor'] = sig(fw(0.05, 0.95, 0.003125)['max_var'], 2)
 M['PopFwheFloorWeak'] = sig(fw(0.02, 0.95, 0.003125)['max_var'], 2)
@@ -120,18 +117,18 @@ M['PopFwhePubVar'] = sig(fw(0.02, 0.95, 0.05)['max_var'], 2)
 M['PopFwhePubMean'] = sig(fw(0.02, 0.95, 0.05)['max_mean'], 2)
 fl = chosen['0.02_0.55']['FWHE']['row']
 M['PopFwheLowBest'] = sig(fl['max_var'], 2)
-M['PopFwheLowTime'] = sig(fl['seconds'], 2)
+M['PopFwheLowTime'] = sig(fl['seconds'], 3)
 
 g95 = [r for r in SUM['0.02_0.95']['rows'] if r['method'] == 'GfBm EM']
 gbest = min(g95, key=lambda r: r['criterion'])
 M['GfbmBestVar'] = sig(gbest['max_var'], 2)
-M['GfbmBestTime'] = sig(gbest['seconds'], 2)
+M['GfbmBestTime'] = sig(gbest['seconds'], 3)
 M['GfbmBestN'] = str(gbest['n'])
 
 c95 = chosen['0.02_0.95']
 c95s = chosen['0.05_0.95']
-M['ExactTime'] = sig(c95['Exact WIS + MC']['row']['seconds'], 2)
-M['CCOneTime'] = sig(c95['CosChaos']['row']['seconds'], 2)
+M['ExactTime'] = sig(c95['Exact WIS + MC']['row']['seconds'], 3)
+M['CCOneTime'] = sig(c95['CosChaos']['row']['seconds'], 3)
 M['PopSpeedup'] = f"{c95['Exact WIS + MC']['row']['seconds'] / c95['CosChaos']['row']['seconds']:.0f}"
 M['PopSpeedupStrong'] = f"{c95s['Exact WIS + MC']['row']['seconds'] / c95s['CosChaos']['row']['seconds']:.0f}"
 
